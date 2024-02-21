@@ -1,0 +1,114 @@
+@media (min-width: 600px){
+    .inicio, .inicio * 
+    {
+        box-sizing: border-box;
+    }
+    .inicio 
+    {
+        background: #ffffff;
+        border-radius: 40px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    ion-header{
+        padding: 5%;
+    } 
+    .ellipse 
+    {
+        background: #ffffff;
+        border-radius: 50%;
+        top: 3%;
+        left: 3%;
+        width: 20%;
+        height: 90%;
+        position: absolute;
+    } 
+    img
+    {
+        width: 45%;
+        height: 95%;
+        position: absolute;
+        left: 3%;
+        top: 3%;
+    }
+    ion-img{
+        width: 20%;
+        height: 20%;
+    }
+    ion-card{
+        top: 80%;
+        margin: 5%;
+        width: 90%;
+        height: 150%;
+    }
+    .adorno2 
+    {
+      width: auto; 
+      height: auto;
+      position: absolute;
+      overflow: visible;  
+      right: 0; 
+      top: 70%;
+      transform: translate(0, 0);
+    }    
+}
+@media (max-width: 600px){
+    .inicio, .inicio * 
+    {
+        box-sizing: border-box;
+    }
+    .inicio 
+    {
+        background: #ffffff;
+        border-radius: 40px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    ion-header{
+        padding: 5%;
+    } 
+    .ellipse 
+    {
+        background: #ffffff;
+        border-radius: 50%;
+        top: 3%;
+        left: 3%;
+        width: 20%;
+        height: 90%;
+        position: absolute;
+    } 
+    img
+    {
+        width: 45%;
+        height: 95%;
+        position: absolute;
+        left: 3%;
+        top: 3%;
+    }
+
+    ion-img{
+        width: 20%;
+        height: 20%;
+    }
+    ion-card{
+        top: 45%;
+        margin: 5%;
+        width: 90%;
+        height: 100%;
+    }
+    .adorno2 
+    {
+      width: auto; 
+      height: auto;
+      position: absolute;
+      overflow: visible;  
+      right: 0; 
+      top: 70%;
+      transform: translate(0, 0);
+    }
+}

@@ -1,0 +1,26 @@
+/* Estilo para hacer que los botones tengan forma redonda */
+*{
+  
+}
+ion-title{
+  font-family: cursive;
+  text-align: center;
+  font-size: 300%;
+}
+
+ion-button {
+  width: 35%; /* Ancho deseado del botón */
+  height: 150%; /* Altura deseada del botón */
+  padding: 5%;
+  --border-radius: 50%; /* Hace que el botón tenga forma de círculo */
+  --background: #3880ff; /* Color de fondo del botón */
+  --color: #ffffff; /* Color del texto del botón */
+  --box-shadow: none; /* Eliminar la sombra por defecto del botón */
+  font-family: cursive;
+  text-align: center;
+  display: flexbox;
+  justify-content: center; /* Centrar los elementos horizontalmente */
+
+}
+
+

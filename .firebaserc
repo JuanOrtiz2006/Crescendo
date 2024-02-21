@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "iot-ionic-9e800": {
+      "hosting": {
+        "app": [
+          "iot-ionic-9e800"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iot-ionic-9e800"
+  }
+}

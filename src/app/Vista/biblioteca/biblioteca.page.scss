@@ -1,0 +1,172 @@
+
+// Variables 
+$primary: #ffffff;
+// Estilos generales
+ion-content, ion-header {
+  --background: $primary;
+}
+//Contenido
+.inicio {
+  background: $primary;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10%;
+}
+
+img
+{
+    background-color:  #EEE;
+}
+
+.adorno2 {
+    position:relative;
+    left: -16%;
+    top: 30%;
+    height: 10000%;
+    width: 133%;
+  }
+.header{
+  height: 13%;
+  margin-bottom: 50%;
+  position: absolute;
+  background: #1d1c1c;
+  box-shadow: 6px rgba(0, 0, 0, 0.275);
+  border-radius: 0px 0px 20px 20px;
+}
+
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  top: 20%;
+  padding: 1%;
+  width: 60%;
+  font-size: 60%;
+}
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.radio-inputs .radio input {
+  display: none;
+}
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgb(81, 77, 77);
+  transition: all .15s ease-in-out;
+}
+.radio-inputs .radio input:checked + .name {
+  background: #2f2e2e;
+  font-weight: 600;
+}
+
+.card {
+  margin: -1%;
+  margin-top: 6%;
+position: relative;
+width: 100%;
+  height: 150px;
+border-radius: 5%;
+z-index: 1111;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+.bg {
+position: absolute;
+top: 2.5%;
+left: 1.5%;
+width: 97%;
+  height: 95%;
+z-index: 2;
+background: rgba(16, 16, 16, 0.676);
+backdrop-filter: blur(24px);
+border-radius: 10px;
+overflow: hidden;
+outline: 2px solid white;
+}
+
+.blob {
+position: absolute;
+z-index: 1;
+top: 50%;
+left: 50%;
+width: 100%;
+height: 150px;
+border-radius: 50%;
+background-color: #1d1c1c;
+opacity: 1;
+filter: blur(12px);
+animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+0% {transform: translate(-100%, -100%) translate3d(0, 0, 0);}
+25% {transform: translate(-100%, -100%) translate3d(100%, 0, 0);}
+50% { transform: translate(-100%, -100%) translate3d(100%, 100%, 0);}
+75% { transform: translate(-100%, -100%) translate3d(0, 100%, 0);}
+100% {transform: translate(-100%, -100%) translate3d(0, 0, 0);}
+}
+ion-card {     
+  background-color: rgba(32, 31, 31, 0.149); // Color negro con 50% de transparencia
+}
+
+h1{
+  font-family:initial;
+  color: black;
+}
+//===========================================================RESPONSIVE===========================================
+@media screen and (min-width: 600px) and (min-height: 300px)
+{
+  ion-avatar{ margin-top: -4%;}
+  .header{height: 19%; margin-bottom: 60%;}
+  .card { margin: -1%; margin-top: 25%; width: 100%; height: 200px;}
+  .adorno2 { position:absolute; left: -14%; top: -1000%; height: 5800%; width: 130%;}
+}
+@media screen and (min-width: 700px) and (min-height: 300px)
+{
+  ion-avatar{ margin-top: -4%; margin-left: 25%;}
+  .header{height: 19%; margin-bottom: 60%;}
+  .card { margin: -1%; margin-top: 25%; width: 100%; height: 200px;}
+  .adorno2 { position:absolute; left: -14%; top: -1500%; height: 7000%; width: 130%;}
+}
+@media screen and (min-height: 800px)
+{
+  ion-avatar{ margin-top: -2%; width: 80%; height: 100%;}
+  .card { margin: -1%; margin-top: 25%; width: 100%; height: 200px;}
+  .adorno2 { position:absolute; left: -16%; top: 90%; height: 10000%; width: 130%; }
+  .radio-inputs { top: 20%; padding: 5%; width: 60%; height: 50%;}
+  .radio-inputs .radio .name { margin-top: -10%; height: 150%; }
+  .card { margin: -1%; margin-top: 10%;}
+}
+@media screen and (min-width: 800px) and (min-height: 300px)
+{
+  ion-avatar{width: 25%; height: 100%; margin-top: -2%; margin-left: 20%;}
+  .header{height: 19%; margin-bottom: 60%;}
+  .card { margin: -1%; margin-top: 25%; width: 100%; height: 200px;}
+  .radio-inputs { margin-left: -10%; width: 70%; height: 50%;}
+  .adorno2 { position:absolute; left: -14%; top: -1500%; height: 8000%; width: 130%;}
+}
+@media screen and (min-width: 900px) and (min-height: 400px)
+{
+  ion-avatar{ margin-top: -1%; margin-left: 25%;}
+  .header{height: 19%; margin-bottom: 60%;}
+  .card { margin: -1%; margin-top: 25%; width: 100%; height: 200px;}
+  .radio-inputs { margin-left: -10%; width: 70%; }
+  .adorno2 { position:absolute; left: -14%; top: -1500%; height: 8300%; width: 130%;}
+}

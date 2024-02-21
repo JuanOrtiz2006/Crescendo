@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      IOT-Ionic
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" size-lg="4" size-md="6" size-xs="12">
+        <ion-button [color]="buttonColor" (click)="mixto(1)" > {{led ? 'Encendido': 'Apagado'}}
+        </ion-button>
+      </ion-col>
+      <ion-col size-sm="6" size-lg="4" size-md="6" size-xs="12">
+        <ion-button [color]="buttonColor2" (click)="mixto(2)" > {{led2 ? 'Encendido': 'Apagado'}}
+        </ion-button>
+      </ion-col>
+      <ion-col size-sm="6" size-lg="4" size-md="6" size-xs="12">
+        <ion-button [color]="buttonColor3" (click)="mixto(3)" > {{led3 ? 'Encendido': 'Apagado'}}
+        </ion-button>
+      </ion-col>
+      <ion-col size-sm="6" size-lg="4" size-md="6" size-xs="12">
+        <ion-button [color]="buttonColor4" (click)="todos()" > {{led4 ? 'Encendido': 'Apagado'}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
