@@ -37,9 +37,7 @@ export class NivelPage implements OnInit {
   cambiarVideoYEnviarNumero() {
     this.videoIndex = (this.videoIndex + 1) % this.videos.length;// Cambiar el video actual
     
-    if (this.videoIndex === 0) { const ledState = doc(this.db, 'ControlTeclado', 'led1'); setDoc(ledState, { encender: true});
-    }else{const ledState = doc(this.db, 'ControlTeclado', 'led1'); setDoc(ledState, { encender: false});
-        }
+  
     if (this.videoIndex === 1) {
     const ledState = doc(this.db, 'ControlTeclado', 'led2'); setDoc(ledState, { encender: true}); 
     }else{const ledState = doc(this.db, 'ControlTeclado', 'led2'); setDoc(ledState, { encender: false});

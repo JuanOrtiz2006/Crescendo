@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Firestore,doc,setDoc } from '@angular/fire/firestore';
 
 @Component({
@@ -9,21 +9,26 @@ import { Firestore,doc,setDoc } from '@angular/fire/firestore';
 })
 export class InicioPage implements OnInit {
   db:any;  
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route:ActivatedRoute) {}
+
+  checkboxChecked: boolean = false;
 
   irPagina(encender: string) {
     this.router.navigate(['../nivel', {encender:encender}]);
   }
 
 
-  irPagina2() {
-    this.router.navigate(['../biblioteca' ]);
+  irPagina2(pagina:string) {
+    this.router.navigate(['../biblioteca', { pagina: pagina }]);
   }
 
-
+pagina:string="";
   
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.checkboxChecked = this.pagina === 'si'; // Convertir el valor a booleano
+    });
   }
 
 }

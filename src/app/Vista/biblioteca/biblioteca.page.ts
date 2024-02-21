@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.page.html',
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
-  playIconChecked: boolean = true; // Inicialmente establecido como verdadero
-  folderIconChecked: boolean = true; // Inicialmente establecido como verdadero
+  
+  checkboxChecked: boolean = false;
 
   irPagina(serie: string) {
     this.router.navigate(['../biblioteca-acordes', { serie: serie }]);
@@ -16,15 +16,18 @@ export class BibliotecaPage implements OnInit {
     this.router.navigate(['../aprendizaje', { serie: serie }]);
   }
 
-  irInicio() {
-    this.router.navigate(['../inicio']); 
+  irInicio(pagina:string) {
+    this.router.navigate(['../inicio', { pagina: pagina }]);
   }
 
  
-
-  constructor(private router: Router) {
+pagina: string="";
+  constructor(private router: Router, private route: ActivatedRoute) {
     
    }ngOnInit() {
-  }
+    this.route.queryParams.subscribe(params => {
+      this.checkboxChecked = this.pagina === 'si'; // Convertir el valor a booleano
+    });
+   }
 
 }
