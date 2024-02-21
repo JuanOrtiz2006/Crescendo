@@ -144,12 +144,21 @@
     }
 }
 
-
-@media screen and (max-height: 400px) {
+@media screen and (min-height: 200px) {
   #videoFondo
   {
-    width: 90%;
-    margin-left: 5%;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: -2%;
+    position: relative;
+  }
+}
+
+@media screen and (min-height: 300px) {
+  #videoFondo
+  {
+    width: 80%;
+    margin-left: 10%;
     margin-top: -2%;
     position: relative;
   }
