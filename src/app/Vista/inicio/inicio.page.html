@@ -11,7 +11,7 @@
           <ion-col size="8">
             <div class="radio-inputs">
               <label class="radio">
-                <input type="radio" name="radio" checked="autoplay">
+                <input type="radio" name="radio" checked="">
                 <span class="name"><ion-icon name="play" aria-hidden="true"></ion-icon></span>
               </label>
               <label class="radio">
@@ -21,13 +21,13 @@
             </div>
           </ion-col>
         </ion-row>
-      </ion-grid>
+      </ion-grid>      
     </ion-header>
     <ion-content class="inicio" scrollY="false">
       <ion-grid>
         <ion-row>
           <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina()">
+            <ion-card class="card" (click)="irPagina('1')">
               <ion-card-content class="bg">
                 <h1>Facil</h1>
               </ion-card-content>
@@ -35,7 +35,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina()">
+            <ion-card class="card" (click)="irPagina('1')">
               <ion-card-content class="bg">
                 <h1>Medio</h1>
               </ion-card-content>
@@ -43,7 +43,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina()">
+            <ion-card class="card" (click)="irPagina('1')">
               <ion-card-content class="bg">
                 <h1>Dificil</h1>
               </ion-card-content>

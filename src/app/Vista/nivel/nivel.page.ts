@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Firestore,doc,setDoc } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-nivel',
@@ -15,12 +15,23 @@ export class NivelPage implements OnInit {
   encendido:boolean=false; encendido2:boolean=false; encendido3:boolean=false; encendido4:boolean=false;
   encendido5:boolean=false; encendido6:boolean=false; encendido7:boolean=false;
   
-  constructor(private db:Firestore, private router:Router) {}
-  ngOnInit() {}
+  encender: string="";
+  
+  constructor(private db:Firestore, private router:Router, private route:ActivatedRoute) {}
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params[this.encender] === "1") {
+        const ledState = doc(this.db, 'ControlTeclado', 'led1'); setDoc(ledState, { encender: true});
+      }
+    });
+  }
 
   irPagina() {
     this.router.navigate(['../inicio']); 
-    const ledState = doc(this.db, 'ControlTeclado', 'led1'); setDoc(ledState, { encender: true});  
+    for (let i = 1; i <= 7; i++) {
+      const ledState = doc(this.db, 'ControlTeclado', `led${i}`);
+      setDoc(ledState, { encender: false });
+  }
   }
 
   cambiarVideoYEnviarNumero() {

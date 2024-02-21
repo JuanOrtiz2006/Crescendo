@@ -11,20 +11,15 @@ export class InicioPage implements OnInit {
   db:any;  
   constructor(private router: Router) {}
 
-  irPagina() {
-    this.router.navigate(['../nivel']); 
+  irPagina(encender: string) {
+    this.router.navigate(['../nivel', {encender:encender}]);
   }
+
 
   irPagina2() {
-    this.router.navigate(['../biblioteca']); 
+    this.router.navigate(['../biblioteca' ]);
   }
 
-  activar() {
-    this.router.navigate(['../inicio']); 
-    const ledState = doc(this.db, 'ControlTeclado', 'led1'); // RUTA DE TABLA EN LA BD
-    setDoc(ledState, { encender: true}); // CAMBIA EL ATRIBUTO DE LA TABLA
-  
-  }
 
   
 
