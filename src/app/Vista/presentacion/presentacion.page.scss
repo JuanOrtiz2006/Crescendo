@@ -147,17 +147,17 @@ button:active {
   }
 }
 
-@media screen and (min-width: 600px) and (min-height: 300px) {
+@media screen and (min-width: 600px) and (max-height: 400px) {
   .adorno{
     top: -24%;
   }
   #Titulo{
-    margin-top: -40%;
+    margin-top: -50%;
     font-size: 700%;
   }
   .boton{
     margin-left: 12%;
-    top: -325%;
+    top: -525%;
     width: 30%;
   }
 }
