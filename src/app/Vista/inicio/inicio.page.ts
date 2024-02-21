@@ -14,9 +14,8 @@ export class InicioPage implements OnInit {
   checkboxChecked: boolean = false;
 
   irPagina(encender: string) {
-    this.router.navigate(['../nivel', {encender:encender}]);
+    this.router.navigate(['../nivel', { '1': encender }]); // Pasar '1' como parámetro
   }
-
 
   irPagina2(pagina:string) {
     this.router.navigate(['../biblioteca', { pagina: pagina }]);

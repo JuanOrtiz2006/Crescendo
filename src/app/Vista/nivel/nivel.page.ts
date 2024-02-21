@@ -19,9 +19,12 @@ export class NivelPage implements OnInit {
   
   constructor(private db:Firestore, private router:Router, private route:ActivatedRoute) {}
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if (params[this.encender] === "1") {
-        const ledState = doc(this.db, 'ControlTeclado', 'led1'); setDoc(ledState, { encender: true});
+    this.route.params.subscribe(params => {
+      this.encender = params['1'];
+      if (this.encender === "1") {
+        // Realizar la acción necesaria para encender el led1
+        this.videoIndex = 0;
+        this.led1();
       }
     });
   }
@@ -114,7 +117,12 @@ export class NivelPage implements OnInit {
     const ledState = doc(this.db, 'ControlTeclado', 'led7'); setDoc(ledState, { encender: true});
     } else{
       const ledState = doc(this.db, 'ControlTeclado', 'led7'); setDoc(ledState, { encender: false});
-    }    
+    } 
+  }
+
+  led1(){
+    const ledState = doc(this.db, 'ControlTeclado', 'led1');
+    setDoc(ledState, { encender: true });
   }
 }
 

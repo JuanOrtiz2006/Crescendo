@@ -140,7 +140,7 @@ img {
 }
 
 /* Media Queries */
-@media screen and (min-width: 600px) and (min-height: 300px) {
+@media screen  and (max-height: 300px) {
   .adorno {
     margin-top: -15%;
   }
