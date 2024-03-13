@@ -1,15 +1,16 @@
 /* CSS */
+$primary: #ffffff;
+// Estilos generales
+ion-content, ion-header {
+  --background: $primary;
+}
 .inicio {
     width: 100%;
     height: 100%;
     position: absolute;
     overflow: hidden;
-    background-color: rgb(28, 27, 27);
     display: none;
-}
-
-.text{
-    color: aliceblue;
+    background: $primary;
 }
 
 #verticalWarning {
@@ -25,20 +26,15 @@
     z-index: 9999;
 }
 
-#idVideo{
-  width: 100%;
-  height: 100%;
-}
 
 .regreso-label {
-  color: rgb(255, 255, 255); /* Texto de regreso en negro */
+  color: rgb(0, 0, 0); /* Texto de regreso en negro */
   margin-left: 1%;
 }
 
-.ion-icon {
-  color: rgb(255, 255, 255); /* Iconos en negro */
+ion-icon{
+  color: #181818;
 }
-
 //==========================Carta
 .e-card {
   margin: 100px auto;

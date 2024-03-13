@@ -16,6 +16,31 @@ export class AprendizajePage implements OnInit {
     this.router.navigate(['../biblioteca']); 
   }
 
+  notas =['../../../assets/Imagenes/AcordeDom.jpg', 
+          '../../../assets/Imagenes/AcordeRem.jpg', 
+          '../../../assets/Imagenes/AcordeMim.jpg', 
+          '../../../assets/Imagenes/AcordeFam.jpg', 
+          '../../../assets/Imagenes/AcordeSolm.jpg', 
+          '../../../assets/Imagenes/AcordeLam.jpg', 
+          '../../../assets/Imagenes/AcordeSim.jpg'];
+
+  acordes=['../../../assets/Imagenes/AcordeDom.jpg', 
+          '../../../assets/Imagenes/AcordeRem.jpg', 
+          '../../../assets/Imagenes/AcordeMim.jpg', 
+          '../../../assets/Imagenes/AcordeFam.jpg', 
+          '../../../assets/Imagenes/AcordeSolm.jpg', 
+          '../../../assets/Imagenes/AcordeLam.jpg', 
+          '../../../assets/Imagenes/AcordeSim.jpg'];
+
+  acordesM=['../../../assets/Imagenes/AcordeDom.jpg', 
+          '../../../assets/Imagenes/AcordeRem.jpg', 
+          '../../../assets/Imagenes/AcordeMim.jpg', 
+          '../../../assets/Imagenes/AcordeFam.jpg', 
+          '../../../assets/Imagenes/AcordeSolm.jpg', 
+          '../../../assets/Imagenes/AcordeLam.jpg', 
+          '../../../assets/Imagenes/AcordeSim.jpg'];
+  
+
   constructor(private router:Router, private route: ActivatedRoute) { }
 
   ngOnInit() {

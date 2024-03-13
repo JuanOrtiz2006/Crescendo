@@ -1,5 +1,6 @@
 .contenedor{
     background-color: #ffffff;
+    width: 100%;
 }
 
 .regreso-label {
@@ -47,7 +48,7 @@
     background-color: #ffffff;
     opacity: 1;
     filter: blur(12px);
-    animation: blob-bounce 5s infinite ease;
+    animation: blob-bounce 20s infinite ease;
   }
   
   @keyframes blob-bounce {

@@ -4,7 +4,6 @@
 }
 .presentacion {
   background: #ffffff;
-  border-radius: 4%;
   height: 100%;
   width: 100%;
   position: relative;
@@ -94,7 +93,7 @@ button:active {
 @media screen and (min-height: 800px) {
   #Titulo{
     margin-top: -10%;
-    font-size: 450%;
+    font-size: 900%;
   }
   .adorno{
     margin-top: -10%;
@@ -152,12 +151,12 @@ button:active {
     top: -24%;
   }
   #Titulo{
-    margin-top: -50%;
+    margin-top: -55%;
     font-size: 700%;
   }
   .boton{
     margin-left: 12%;
-    top: -525%;
+    margin-top: -60%;
     width: 30%;
   }
 }

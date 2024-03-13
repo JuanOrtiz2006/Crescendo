@@ -6,9 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./com-inicio.component.scss'],
 })
 export class ComInicioComponent  implements OnInit {
-  @Input() titulo: string="";
-  @Input() imagen: string="";
-  @Input() click: string="";
+  @Input() vid: string="";
+
   constructor() { }
 
   ngOnInit() {}

@@ -1,67 +1,64 @@
-<ion-label class="vista-niveles">
-  <div class="ion-page" id="main-content">
-    <ion-header class="header">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="4">
-            <ion-avatar>
-              <img alt="Silhouette of a person's head" src="../../../assets/Imagenes/Logo.png" />
-            </ion-avatar>
-          </ion-col>
-          <ion-col size="8">
-            <div class="radio-inputs">
-              <label class="radio">
-                <input type="radio" name="radio" checked="checkboxChecked">
-                <span class="name"><ion-icon name="play" aria-hidden="true"></ion-icon></span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="radio" (click)="irPagina2('si')">
-                <span class="name"><ion-icon name="folder" aria-hidden="true"></ion-icon></span>
-              </label>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>      
-    </ion-header>
-    <ion-content class="inicio" scrollY="false">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina('1')">
-              <ion-card-content class="bg">
-                <h1>Facil</h1>
-              </ion-card-content>
-              <ion-label class="blob"></ion-label>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina('1')">
-              <ion-card-content class="bg">
-                <h1>Medio</h1>
-              </ion-card-content>
-              <ion-label class="blob"></ion-label>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12" size-sm="4">
-            <ion-card class="card" (click)="irPagina('1')">
-              <ion-card-content class="bg">
-                <h1>Dificil</h1>
-              </ion-card-content>
-              <ion-label class="blob"></ion-label>
-            </ion-card>
-          </ion-col>
-          <ion-col size="12">
-            <svg class="adorno2" width="515" height="366" viewBox="0 0 515 366" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M515 160.5C515 160.5 444 198.5 256.5 115C69 31.4996 39.5 108 39.5 108L69 350L444 350L515 160.5Z" fill="black" fill-opacity="0.5"/>
-              <path d="M0 112.888C0 112.888 71.0747 163.644 258.772 52.1143C446.469 -59.4152 476 42.7651 476 42.7651L446.469 366L71.0747 366L0 112.888Z" fill="black" fill-opacity="0.5"/></svg>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-content>
-  </div>
-  <div>
-  </div>
-</ion-label>
+<ion-content class="inicio" scrollY="false">
+  <ion-header class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1" class="img">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="../../../assets/Imagenes/Logo.png" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="11">
+          <div class="radio-inputs">
+            <label class="radio">
+              <input type="radio" name="radio">
+              <span class="name"><ion-icon name="play" aria-hidden="true"></ion-icon></span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="radio" checked="checkboxChecked" (click)="irPagina2('si')">
+              <span class="name"><ion-icon name="folder" aria-hidden="true"></ion-icon></span>
+            </label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+      
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4">
+        <ion-card class="card" (click)="irPagina('1')">
+          <ion-card-content class="bg">
+            <h1>Facil</h1>
+          </ion-card-content>
+          <ion-label class="blob"></ion-label>
+      </ion-card>
+      </ion-col>
+      <ion-col size="12" size-sm="4">
+        <ion-card class="card" (click)="irPagina('1')">
+          <ion-card-content class="bg">
+            <h1>Medio</h1>
+          </ion-card-content>
+          <ion-label class="blob"></ion-label>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-sm="4">
+        <ion-card class="card" (click)="irPagina('1')">
+          <ion-card-content class="bg">
+            <h1>Dificil</h1>
+          </ion-card-content>
+          <ion-label class="blob"></ion-label>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" >
+        <svg class="adorno2" width="515" height="366" viewBox="0 0 515 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M515 160.5C515 160.5 444 198.5 256.5 115C69 31.4996 39.5 108 39.5 108L69 350L444 350L515 160.5Z" fill="black" fill-opacity="0.5"/>
+          <path d="M0 112.888C0 112.888 71.0747 163.644 258.772 52.1143C446.469 -59.4152 476 42.7651 476 42.7651L446.469 366L71.0747 366L0 112.888Z" fill="black" fill-opacity="0.5"/></svg>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+ 
+</ion-content>
 
 
 

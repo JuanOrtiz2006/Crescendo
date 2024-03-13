@@ -1,0 +1,17 @@
+
+// Variables 
+$primary: #ffffff;
+// Estilos generales
+ion-content, ion-header {
+  --background: $primary;
+}
+.inicio {
+  background: $primary;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.regreso-label{
+    color: black;
+}

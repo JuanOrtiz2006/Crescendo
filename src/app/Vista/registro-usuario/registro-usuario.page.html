@@ -1,29 +1,19 @@
+
+
 <ion-grid class="registro-de-usuario">
   <ion-row>
     <!--Adorno Superior-->
-    <ion-col class="adorno" size="12">
-      <svg class="adorno" viewBox="0 0 375 226" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-70 65.5C-70 65.5 1 27.5004 188.5 111C376 194.5 405.5 118 405.5 118L376 -124H1L-70 65.5Z" fill="black" fill-opacity="0.5"/>
-        <path d="M445 113.112C445 113.112 373.925 62.3561 186.228 173.886C-1.46899 285.415 -31 183.235 -31 183.235L-1.46899 -140H373.925L445 113.112Z" fill="black" fill-opacity="0.5"/>
-      </svg>
-    </ion-col>
+    <svg class="adorno" viewBox="0 0 375 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-70 65.5C-70 65.5 1 27.5004 188.5 111C376 194.5 405.5 118 405.5 118L376 -124H1L-70 65.5Z" fill="black" fill-opacity="0.5"/>
+      <path d="M445 113.112C445 113.112 373.925 62.3561 186.228 173.886C-1.46899 285.415 -31 183.235 -31 183.235L-1.46899 -140H373.925L445 113.112Z" fill="black" fill-opacity="0.5"/>
+    </svg>
     <!--Imagen Usuario-->
     <ion-col size="12">
-      <ion-label class="logo">
-        <ion-label class="ellipse-1"></ion-label>
-        <ion-label class="mask-group">
-          <ion-label class="ellipse-2"></ion-label>
-          <img
-            class="imagen"
-            src="../../../assets/Imagenes/Logo.png"
-          />
-        </ion-label>
-      </ion-label>
+        <img src="../../../assets/Imagenes/Logo.png"/>
     </ion-col>
     <!--Carta de Registro-->
     <ion-col size="12">
-      <div class="login-box">
-
+      <ion-card class="login-box">
         <form #formulario="ngForm">
           <div class="user-box">
             <input type="text" name="correo" required="" ngModel>
@@ -33,21 +23,10 @@
             <input type="password" name="clave" required="" ngModel>
             <label>Password</label>
           </div>
-          <a  (click)="iniciarSesion(formulario)">
-                 Ingresar
-             <span></span>
-          </a>
-          <a  (click)="registrarUsuario(formulario)">
-            Registrarse
-          <span></span>
-     </a>
+          <a  (click)="iniciarSesion(formulario)"> Ingresar <span></span> </a>
+          <a  (click)="registrarUsuario(formulario)"> Registrarse <span></span></a>
         </form>
-      </div> 
-    </ion-col>
-    <ion-col size="12">
-      <svg class="adorno2" width="515" height="366" viewBox="0 0 515 366" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M515 160.5C515 160.5 444 198.5 256.5 115C69 31.4996 39.5 108 39.5 108L69 350L444 350L515 160.5Z" fill="black" fill-opacity="0.5"/>
-      <path d="M0 112.888C0 112.888 71.0747 163.644 258.772 52.1143C446.469 -59.4152 476 42.7651 476 42.7651L446.469 366L71.0747 366L0 112.888Z" fill="black" fill-opacity="0.5"/></svg>
+      </ion-card> 
     </ion-col>
   </ion-row>
 </ion-grid>
