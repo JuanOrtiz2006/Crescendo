@@ -8,8 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./nivel.page.scss'],
 })
 export class NivelPage implements OnInit {
-  videos: string[] = ["../../../assets/Videos/NotaDo.mp4","../../../assets/Videos/NotaRe.mp4", "../../../assets/Videos/NotaMi.mp4",
-                      "../../../assets/Videos/NotaFa.mp4","../../../assets/Videos/NotaSol.mp4", "../../../assets/Videos/NotaLa.mp4", "../../../assets/Videos/NotaSi.mp4"];
+  videos: string[] = ["../../../assets/Videos/NotaDo.gif","../../../assets/Videos/NotaRe.gif", "../../../assets/Videos/NotaMi.gif",
+                      "../../../assets/Videos/NotaFa.gif","../../../assets/Videos/NotaSol.gif", "../../../assets/Videos/NotaLa.gif", "../../../assets/Videos/NotaSi.gif"];
  videoIndex: number = 0;
   inicio:boolean=false; ledstate:any;
   encendido:boolean=false; encendido2:boolean=false; encendido3:boolean=false; encendido4:boolean=false;

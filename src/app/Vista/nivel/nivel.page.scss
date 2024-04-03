@@ -26,10 +26,18 @@ ion-content, ion-header {
     z-index: 9999;
 }
 
-
+.texto{
+  font-style: italic;
+  font-size: 100%;
+}
+.video{
+  margin-top: 5%;
+}
 .regreso-label {
   color: rgb(0, 0, 0); /* Texto de regreso en negro */
   margin-left: 1%;
+  font-style: italic;
+  font-size: 100%;
 }
 
 ion-icon{
@@ -141,21 +149,16 @@ ion-icon{
 }
 
 @media screen and (min-height: 200px) {
-  #videoFondo
-  {
-    width: 60%;
-    margin-left: 20%;
-    margin-top: -2%;
-    position: relative;
-  }
+  #videoFondo {width: 50%; margin-left: 25%; margin-top: -5%; position: relative;}
+
 }
 
 @media screen and (min-height: 300px) {
   #videoFondo
   {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: -2%;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: -3%;
     position: relative;
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-aprendizaje',
   templateUrl: './aprendizaje.page.html',
@@ -16,29 +18,29 @@ export class AprendizajePage implements OnInit {
     this.router.navigate(['../biblioteca']); 
   }
 
-  notas =['../../../assets/Imagenes/AcordeDom.jpg', 
-          '../../../assets/Imagenes/AcordeRem.jpg', 
-          '../../../assets/Imagenes/AcordeMim.jpg', 
-          '../../../assets/Imagenes/AcordeFam.jpg', 
-          '../../../assets/Imagenes/AcordeSolm.jpg', 
-          '../../../assets/Imagenes/AcordeLam.jpg', 
-          '../../../assets/Imagenes/AcordeSim.jpg'];
+  notas =['../../../assets/Imagenes/Do Mayor.svg', 
+          '../../../assets/Imagenes/Re Mayor.svg', 
+          '../../../assets/Imagenes/Mi Mayor.svg', 
+          '../../../assets/Imagenes/Fa Mayor.svg', 
+          '../../../assets/Imagenes/Sol Mayor.svg', 
+          '../../../assets/Imagenes/La Mayor.svg', 
+          '../../../assets/Imagenes/Si Mayor.svg'];
 
-  acordes=['../../../assets/Imagenes/AcordeDom.jpg', 
-          '../../../assets/Imagenes/AcordeRem.jpg', 
-          '../../../assets/Imagenes/AcordeMim.jpg', 
-          '../../../assets/Imagenes/AcordeFam.jpg', 
-          '../../../assets/Imagenes/AcordeSolm.jpg', 
-          '../../../assets/Imagenes/AcordeLam.jpg', 
-          '../../../assets/Imagenes/AcordeSim.jpg'];
+  acordes=['../../../assets/Imagenes/Do Mayor.svg', 
+          '../../../assets/Imagenes/Re Mayor.svg', 
+          '../../../assets/Imagenes/Mi Mayor.svg', 
+          '../../../assets/Imagenes/Fa Mayor.svg', 
+          '../../../assets/Imagenes/Sol Mayor.svg', 
+          '../../../assets/Imagenes/La Mayor.svg', 
+          '../../../assets/Imagenes/Si Mayor.svg'];
 
-  acordesM=['../../../assets/Imagenes/AcordeDom.jpg', 
-          '../../../assets/Imagenes/AcordeRem.jpg', 
-          '../../../assets/Imagenes/AcordeMim.jpg', 
-          '../../../assets/Imagenes/AcordeFam.jpg', 
-          '../../../assets/Imagenes/AcordeSolm.jpg', 
-          '../../../assets/Imagenes/AcordeLam.jpg', 
-          '../../../assets/Imagenes/AcordeSim.jpg'];
+  acordesM=['../../../assets/Imagenes/Do menor.svg', 
+            '../../../assets/Imagenes/Re Menor.svg', 
+            '../../../assets/Imagenes/Mi Menor.svg', 
+            '../../../assets/Imagenes/Fa Menor.svg', 
+            '../../../assets/Imagenes/Sol Menor.svg', 
+            '../../../assets/Imagenes/La Menor.svg', 
+            '../../../assets/Imagenes/Si Menor.svg'];
   
 
   constructor(private router:Router, private route: ActivatedRoute) { }
