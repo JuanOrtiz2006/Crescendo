@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .presentacion *,
 .boton {
   box-sizing: border-box;
@@ -9,18 +10,15 @@
   position: relative;
 }
 #Titulo {
-  color: #000000;
-  text-align: left;
-  font-family: "Inika-Regular";
-  font-size: 400%;
-  font-weight: 100;
+  color: #333;
+  font-family: "Dancing Script";
+  font-size: 600%;
   position: relative;
   margin-top: -15%;
   margin-bottom: 10%;
-  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5); 
-
+  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); 
 }
-.adorno {
+.adorno, .adorno2 {
   position: relative;
   left: -81%;
   margin-top: -20%;
@@ -28,7 +26,6 @@
   width: 260%;
 }
 .adorno2 {
-  position: relative;
   left: -32%;
   top: -2%;
   margin-top: 27%;
@@ -36,129 +33,47 @@
   width: 165%;
 }
 .boton {
-  font-family: "Inika-Regular";
   position: relative;
   left: 50%;
   width: 45%;
   height: 100%;
-  --background: #333;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  --justify-content: center;
-  cursor: pointer;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  --align-items: center;
-  --font-family: Consolas, Courier New, monospace;
-  --border: solid #404c5d 1px;
-  font-size: 100%;
-  color: rgb(161, 161, 161);
-  -webkit-transition: 500ms;
-  transition: 500ms;
-  border-radius: 5px;
-  background: linear-gradient(145deg, #2e2d2d, #212121);
-  -webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
-    inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
-}
-button:hover {
-  -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
-  box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
-  color: #d6d6d6;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
-button:active {
-  -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
-  box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
-  color: #d6d6d6;
-  -webkit-transition: 100ms;
-  transition: 100ms;
+  padding: 3%;
+  font-family: "Dancing Script";
+  color: #ffffff;
+  font-size: 150%;
+  box-shadow: 5px 5px 10px 5px  rgba(0, 0, 0, 0.5); 
+  background: #4b4545;
+  border-radius: 100px; 
 }
 @media screen and (min-width: 500px) {
-  .adorno2{
-    margin-top: 10%;
-  }
+  .adorno2{margin-top: 10%;}
 }
-
 @media screen and (min-height: 700px) {
-  .adorno{
-    margin-top: -10%;
-  }
-  .adorno2{
-    margin-top: 40%;
-  }
+  .adorno{margin-top: -10%;}
+  .adorno2{margin-top: 40%;}
 }
 @media screen and (min-height: 800px) {
-  #Titulo{
-    margin-top: -10%;
-    font-size: 900%;
-  }
-  .adorno{
-    margin-top: -10%;
-  }
-  .adorno2{
-    margin-top: 40%;
-  }
-  .boton{
-    font-size: 200%;
-    top: 50%;
-    width: 50%;
-    margin-left: -5%;
-  }
+  #Titulo{margin-top: -10%; font-size: 900%;}
+  .adorno{margin-top: -10%;}
+  .adorno2{margin-top: 40%;}
+  .boton{font-size: 200%;top: 50%;width: 50%;margin-left: -5%;}
 }
 @media screen and (min-height: 900px) {
-  .adorno2{
-    margin-top: 21%;
-  }
+  .adorno2{margin-top: 21%;}
 }
-
 @media screen and (min-height: 1000px) { 
-  #Titulo{
-    margin-top: -30%;
-  }
-  .boton{
-    top: 1%;
-    font-size: 300%;
-
-  }
-  .adorno {
-    margin-top: -15%;
-  }
-  .adorno2 {
-    margin-top: 20%;
-  }
+  #Titulo{margin-top: -30%;}
+  .boton{top: 1%;font-size: 300%;}
+  .adorno {margin-top: -15%;}
+  .adorno2 {margin-top: 20%;}
 }
 @media screen and (min-width: 1024px) and (min-height: 700px) {
-  .adorno{
-    top: -44%;
-  }
-  #Titulo{
-    margin-top: -40%;
-    font-size: 800%;
-  }
-  .boton{
-    margin-left: 5%;
-    top: -150%;
-    width: 40%;
-    font-size: 300%;
-  }
+  .adorno{top: -44%;}
+  #Titulo{margin-top: -40%;font-size: 800%;}
+  .boton{margin-left: 5%;top: -150%;width: 40%;font-size: 300%;}
 }
-
 @media screen and (min-width: 600px) and (max-height: 400px) {
-  .adorno{
-    top: -24%;
-  }
-  #Titulo{
-    margin-top: -55%;
-    font-size: 700%;
-  }
-  .boton{
-    margin-left: 12%;
-    margin-top: -60%;
-    width: 30%;
-  }
+  .adorno{top: -24%;}
+  #Titulo{margin-top: -55%; font-size: 700%;}
+  .boton{margin-left: 12%; margin-top: -60%; width: 30%;}
 }
-
-

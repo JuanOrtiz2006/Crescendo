@@ -8,26 +8,14 @@ import { Firestore,doc,setDoc } from '@angular/fire/firestore';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  db:any;  
+  db:any;
+  pagina:string="";  
   constructor(private router: Router, private route:ActivatedRoute) {}
-
-  checkboxChecked: boolean = false;
-
+  ngOnInit() {}
   irPagina(encender: string) {
     this.router.navigate(['../nivel', { '1': encender }]); // Pasar '1' como parámetro
   }
-
   irPagina2(pagina:string) {
     this.router.navigate(['../biblioteca', { pagina: pagina }]);
   }
-
-pagina:string="";
-  
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.checkboxChecked = this.pagina === 'si'; // Convertir el valor a booleano
-    });
-  }
-
 }

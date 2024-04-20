@@ -1,5 +1,4 @@
-/* General */
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 /* Registro de Usuario */
 .registro-de-usuario {
   background: #ffffff;
@@ -8,8 +7,6 @@
   height: 100%;
   width: 100%;
 }
-
-/* Adorno */
 .adorno {
   width: auto;
   height: 100%;
@@ -17,7 +14,6 @@
   position:relative;
   margin-top: -20%;
 }
-/* Imagen de Usuario */
 img {
   margin-top: -15%;
   margin-left: 35%;
@@ -28,26 +24,22 @@ img {
   background: #343434;
   box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.65);
 }
-
-/* Caja de Inicio de Sesión */
 .login-box {
   position: relative;
-  top: 5%; /* Se recomienda ajustar esto de acuerdo a tu diseño */
+  top: 5%; 
   margin-left: 50%;
   width: 90%;
   padding: 40px;
   margin-top: 30%;
   transform: translate(-50%, -50%);
-  background: rgba(35, 32, 32, 0.987);
+  background: rgba(35, 32, 32, 0.942);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
-
 .login-box .user-box {
   position: relative;
 }
-
 .login-box .user-box input {
   width: 100%;
   padding: 10px 0;
@@ -59,18 +51,17 @@ img {
   outline: none;
   background: transparent;
 }
-
 .login-box .user-box label {
   position: absolute;
   top: 0;
   left: 0;
   padding: 1%;
-  font-size: 100%;
+  font-family: "Dancing Script";
+  font-size: 150%;
   color: #fff;
   pointer-events: none;
   transition: .5s;
 }
-
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
   top: -20px;
@@ -78,21 +69,19 @@ img {
   color: #bdb8b8;
   font-size: 80%;
 }
-
 .login-box form a {
   position: relative;
   display: inline-block;
-  padding: 1% 2%;
+  padding: 3%;
   color: #ffffff;
-  font-size: 100%;
+  font-family: "Dancing Script";
+  font-size: 200%;
   text-decoration: none;
-  text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 10%;
+  margin-top: 5%;
   letter-spacing: 4px;
 }
-
 .login-box a:hover {
   background: #dedede;
   color: #fff;
@@ -102,7 +91,6 @@ img {
               0 0 50px #dedede,
               0 0 100px #dedede;
 }
-
 .login-box a span {
   position: absolute;
   display: block;
@@ -116,7 +104,6 @@ img {
     left: 100%;
   }
 }
-
 .login-box a span:nth-child(1) {
   bottom: 2px;
   left: -100%;

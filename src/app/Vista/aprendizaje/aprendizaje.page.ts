@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-
-
 @Component({
   selector: 'app-aprendizaje',
   templateUrl: './aprendizaje.page.html',
@@ -9,15 +7,18 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class AprendizajePage implements OnInit {
   serie: string = '';
-
+  constructor(private router:Router, private route: ActivatedRoute) { }
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.serie = params['serie'];
+    });
+  }
   irPagina(serie:string) {
     this.router.navigate(['../biblioteca-acordes',{ serie: serie }]); 
   }
-
   irPagina2() {
     this.router.navigate(['../biblioteca']); 
   }
-
   notas =['../../../assets/Imagenes/Do Mayor.svg', 
           '../../../assets/Imagenes/Re Mayor.svg', 
           '../../../assets/Imagenes/Mi Mayor.svg', 
@@ -25,7 +26,6 @@ export class AprendizajePage implements OnInit {
           '../../../assets/Imagenes/Sol Mayor.svg', 
           '../../../assets/Imagenes/La Mayor.svg', 
           '../../../assets/Imagenes/Si Mayor.svg'];
-
   acordes=['../../../assets/Imagenes/Do Mayor.svg', 
           '../../../assets/Imagenes/Re Mayor.svg', 
           '../../../assets/Imagenes/Mi Mayor.svg', 
@@ -33,7 +33,6 @@ export class AprendizajePage implements OnInit {
           '../../../assets/Imagenes/Sol Mayor.svg', 
           '../../../assets/Imagenes/La Mayor.svg', 
           '../../../assets/Imagenes/Si Mayor.svg'];
-
   acordesM=['../../../assets/Imagenes/Do menor.svg', 
             '../../../assets/Imagenes/Re Menor.svg', 
             '../../../assets/Imagenes/Mi Menor.svg', 
@@ -41,14 +40,4 @@ export class AprendizajePage implements OnInit {
             '../../../assets/Imagenes/Sol Menor.svg', 
             '../../../assets/Imagenes/La Menor.svg', 
             '../../../assets/Imagenes/Si Menor.svg'];
-  
-
-  constructor(private router:Router, private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.serie = params['serie'];
-    });
-  
-  }
 }

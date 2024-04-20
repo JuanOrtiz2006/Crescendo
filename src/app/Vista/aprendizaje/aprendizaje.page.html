@@ -8,28 +8,19 @@
   <ion-label *ngIf="serie === 'Amenores'">
     <ion-label class="regreso-label" (click)="irPagina('acordes')">Regresar</ion-label>
   </ion-label>
-
   <ion-grid  *ngIf="serie === 'notas'" style="overflow-y: auto; max-height: 100%;">
     <ion-row>
-      <app-com-inicio *ngFor="let vid of notas"
-      [vid]="vid">></app-com-inicio> 
+      <app-com-inicio *ngFor="let vid of notas" [vid]="vid">></app-com-inicio> 
     </ion-row>
   </ion-grid>
-  
   <ion-grid class="inicio" *ngIf="serie === 'Amayores'" style="overflow-y: auto; max-height: 100%;">
     <ion-row>
-      <app-com-inicio *ngFor="let vid of acordes"
-      [vid]="vid">></app-com-inicio> 
+      <app-com-inicio *ngFor="let vid of acordes" [vid]="vid">></app-com-inicio> 
     </ion-row>
   </ion-grid>
-  
-  
   <ion-grid class="inicio" *ngIf="serie === 'Amenores'" style="overflow-y: auto; max-height: 100%;">
     <ion-row>
-      <app-com-inicio *ngFor="let vid of acordesM"
-      [vid]="vid">></app-com-inicio> 
+      <app-com-inicio *ngFor="let vid of acordesM" [vid]="vid">></app-com-inicio> 
     </ion-row>
   </ion-grid>
-  
 </ion-content>
-

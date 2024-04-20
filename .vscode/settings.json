@@ -1,3 +1,17 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular/standalone"]
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular/standalone"
+  ],
+  "cSpell.words": [
+    "biblioteca",
+    "Convertir",
+    "encender",
+    "firestore",
+    "inicio",
+    "nivel",
+    "Pagina",
+    "parámetro",
+    "Pasar"
+  ]
 }
