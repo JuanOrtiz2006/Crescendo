@@ -7,6 +7,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
+  messageHtml:any;
   acordes=['../../../assets/Imagenes/Do.svg', 
           '../../../assets/Imagenes/Re.svg', 
           '../../../assets/Imagenes/Mi.svg', 
@@ -29,11 +30,9 @@ export class BibliotecaPage implements OnInit {
   async presentAlert(dato: number) {
     if(dato==1)
       {
-        const messageHtml = this.acordes
-        .map((acorde) => `<swiper-slide><img src="${acorde}"></swiper-slide>`)
-        .join('');
+        this.messageHtml = this.acordes.map((acorde) => `<swiper-slide><img src="${acorde}"></swiper-slide>`);
         const alert = await this.alertController.create({
-        message: `<swiper-container>${messageHtml}</swiper-container>`,});
+        message: `<swiper-container>${this.messageHtml}</swiper-container>`,});
         await alert.present();
       }
     if(dato==2)
@@ -48,5 +47,7 @@ export class BibliotecaPage implements OnInit {
     if(dato==3)
       {
       }
+
+      console.log(this.messageHtml);
   }
 }

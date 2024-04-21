@@ -1,11 +1,10 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCyZitMUTuDAaClzBZMsvG64D2qUfegrYM",
-    authDomain: "iot-ionic-9e800.firebaseapp.com",
-    projectId: "iot-ionic-9e800",
-    storageBucket: "iot-ionic-9e800.appspot.com",
-    messagingSenderId: "385144609748",
-    appId: "1:385144609748:web:614d4dda54e2ae07bc5441"
-  }
+    apiKey: "AIzaSyCj7UaCji5C2a7pz-WNuifIcpirKDLs9gE",
+  authDomain: "crescendo-7fa4e.firebaseapp.com",
+  projectId: "crescendo-7fa4e",
+  storageBucket: "crescendo-7fa4e.appspot.com",
+  messagingSenderId: "262403749867",
+  appId: "1:262403749867:web:809b6155c1acdb76574bae"}
 };
