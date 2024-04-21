@@ -28,6 +28,10 @@ ion-content, ion-header {
   font-family: "Dancing Script";
   font-size: 150%;
 }
+
+img{
+  margin-left: 10%;
+}
 //==========================Carta
 .e-card {
   margin: 100px auto;
@@ -109,10 +113,4 @@ ion-content, ion-header {
 }
 @media screen and (orientation: landscape) {
   .inicio{display: block;}
-}
-@media screen and (min-height: 200px) {
-  #videoFondo {width: 50%; margin-left: 25%; margin-top: -5%; position: relative;}
-}
-@media screen and (min-height: 300px) {
-  #videoFondo {width: 60%;margin-left: 20%;margin-top: -3%;position: relative;}
 }

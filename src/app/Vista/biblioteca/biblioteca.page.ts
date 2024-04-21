@@ -1,48 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-
 @Component({
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.page.html',
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
-  pagina: string="";
-  notas =['../../../assets/Imagenes/Do Mayor.svg', 
-          '../../../assets/Imagenes/Re Mayor.svg', 
-          '../../../assets/Imagenes/Mi Mayor.svg', 
-          '../../../assets/Imagenes/Fa Mayor.svg', 
-          '../../../assets/Imagenes/Sol Mayor.svg', 
-          '../../../assets/Imagenes/La Mayor.svg', 
-          '../../../assets/Imagenes/Si Mayor.svg'];
-  acordes=['../../../assets/Imagenes/Do Mayor.svg', 
-          '../../../assets/Imagenes/Re Mayor.svg', 
-          '../../../assets/Imagenes/Mi Mayor.svg', 
-          '../../../assets/Imagenes/Fa Mayor.svg', 
-          '../../../assets/Imagenes/Sol Mayor.svg', 
-          '../../../assets/Imagenes/La Mayor.svg', 
-          '../../../assets/Imagenes/Si Mayor.svg'];
-  acordesM=['../../../assets/Imagenes/Do menor.svg', 
-            '../../../assets/Imagenes/Re Menor.svg', 
-            '../../../assets/Imagenes/Mi Menor.svg', 
-            '../../../assets/Imagenes/Fa Menor.svg', 
-            '../../../assets/Imagenes/Sol Menor.svg', 
-            '../../../assets/Imagenes/La Menor.svg', 
-            '../../../assets/Imagenes/Si Menor.svg'];
-            
+  acordes=['../../../assets/Imagenes/Do.svg', 
+          '../../../assets/Imagenes/Re.svg', 
+          '../../../assets/Imagenes/Mi.svg', 
+          '../../../assets/Imagenes/Fa.svg', 
+          '../../../assets/Imagenes/Sol.svg', 
+          '../../../assets/Imagenes/La.svg', 
+          '../../../assets/Imagenes/Si.svg'];
+  acordesM=['../../../assets/Imagenes/Dom.svg', 
+            '../../../assets/Imagenes/Rem.svg', 
+            '../../../assets/Imagenes/Mim.svg', 
+            '../../../assets/Imagenes/Fam.svg', 
+            '../../../assets/Imagenes/Solm.svg', 
+            '../../../assets/Imagenes/Lam.svg', 
+            '../../../assets/Imagenes/Sim.svg'];
   constructor(private router: Router, private route: ActivatedRoute, private alertController:AlertController) {}
   ngOnInit() {}
-  irPagina(serie: string) {
-    this.router.navigate(['../biblioteca-acordes', { serie: serie }]);
-  }
-  irPagina2(serie: string) {
-    this.router.navigate(['../aprendizaje', { serie: serie }]);
-  }
   irInicio(pagina:string) {
-    this.router.navigate(['../inicio', { pagina: pagina }]);
+    this.router.navigate(['../inicio']);
   }
-
   async presentAlert(dato: number) {
     if(dato==1)
       {

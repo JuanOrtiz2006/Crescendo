@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Firestore,doc,setDoc } from '@angular/fire/firestore';
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -13,9 +12,9 @@ export class InicioPage implements OnInit {
   constructor(private router: Router, private route:ActivatedRoute) {}
   ngOnInit() {}
   irPagina(encender: string) {
-    this.router.navigate(['../nivel', { '1': encender }]); // Pasar '1' como parámetro
+    this.router.navigate(['../nivel', { encender}]); // Pasar '1' como parámetro
   }
   irPagina2(pagina:string) {
-    this.router.navigate(['../biblioteca', { pagina: pagina }]);
+    this.router.navigate(['../biblioteca']);
   }
 }
