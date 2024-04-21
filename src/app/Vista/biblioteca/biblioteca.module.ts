@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
 
 import { BibliotecaPage } from './biblioteca.page';
-import { SharedComponentModule } from 'src/app/Componentes/shared-component.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { SharedComponentModule } from 'src/app/Componentes/shared-component.modu
     FormsModule,
     IonicModule,
     BibliotecaPageRoutingModule,
-    SharedComponentModule
   ],
-  declarations: [BibliotecaPage]
+  declarations: [BibliotecaPage],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BibliotecaPageModule {}

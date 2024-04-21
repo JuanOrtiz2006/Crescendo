@@ -25,20 +25,8 @@ const routes: Routes = [
     loadChildren: () => import('./Vista/biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
   },
   {
-    path: 'biblioteca-acordes',
-    loadChildren: () => import('./Vista/biblioteca-acordes/biblioteca-acordes.module').then( m => m.BibliotecaAcordesPageModule)
-  },
-  {
-    path: 'escalas',
-    loadChildren: () => import('./Vista/escalas/escalas.module').then( m => m.EscalasPageModule)
-  },
-  {
     path: 'nivel',
     loadChildren: () => import('./Vista/nivel/nivel.module').then( m => m.NivelPageModule)
-  },
-  {
-    path: 'aprendizaje',
-    loadChildren: () => import('./Vista/aprendizaje/aprendizaje.module').then( m => m.AprendizajePageModule)
   }
 ];
 

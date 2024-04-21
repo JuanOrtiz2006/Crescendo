@@ -7,17 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: BibliotecaPage,
-    children: [
-      
-      {
-        path: 'biblioteca-acordes',
-        loadChildren: () => import('../biblioteca-acordes/biblioteca-acordes.module').then( m => m.BibliotecaAcordesPageModule)
-      },
-      {
-        path: 'escalas',
-        loadChildren: () => import('../escalas/escalas.module').then( m => m.EscalasPageModule)
-      }
-        ]
+    
   }
 ];
 
