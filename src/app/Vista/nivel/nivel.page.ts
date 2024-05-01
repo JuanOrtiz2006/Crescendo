@@ -26,7 +26,7 @@ export class NivelPage implements OnInit {
     });
   }
   irPagina(n:number) {//Metodo para navegacion de pagina
-    this.router.navigate(['../inicio']);//direccion de la pagina
+    this.router.navigate(['../inicio']); // Pasar '1' como parámetro
   }
   onSlideChange(event: any) {//Metodo para lectura de slider
     const activeIndex = event.detail.map((item: { activeIndex: any; }) => item.activeIndex)[0];//Obtiene el inice del slider
@@ -35,14 +35,12 @@ export class NivelPage implements OnInit {
         this.led = activeIndex; //Le el indice del vector
         this.rout = set(ref(this.database, 'Notas'), this.led);//Esvribe el indice en la RTDB
         this.link = this.notas[this.led];//Coloca la ruta de la imagen
-        console.log('Índice 1:', this.led);
       }
     if(this.pagina==2)
       {
         this.led2=activeIndex
         this.link2 = this.acordes[this.led2];
         this.rout = set(ref(this.database, 'Notas'), this.led2+7);    
-        console.log('Índice 2:', this.led2);        
       }
   }
   private resetValues() {
