@@ -1,35 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&family=Bree+Serif&family=Caveat:wght@400..700&family=Kaushan+Script&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Briem+Hand:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poetsen+One&family=Satisfy&display=swap');
+
 .presentacion *,
 .boton {
   box-sizing: border-box;
 }
 .presentacion { 
-  background: #ffffff; 
+  background: #FAFAF7; 
   height: 100%;
   width: 100%;
   position: relative;
 }
 #Titulo {
-  color: #333;
-  font-family: "Bree Serif", serif;
-  font-size: 500%;
+  color: #090909;
+  font-family: "Alegreya", serif;
+    font-size: 400%;
   position: fixed;
-  top: 5%;
+  top: 50%;
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); 
   z-index: 1;
 
 }
+
 img{
-  margin-top: -15%;
+  margin-top: -6%;
   margin-bottom: -35%;
   position: fixed;
   z-index: 0;
+  height: 38%;
+  width: 95%;
+
+
 }
 .boton {
   position: fixed;
-  margin-top: 70%;
-  left: 50%;
-  width: 35%;
+  margin-top: 120%;
+  left: 12%;
+  width: 75%;
   padding: 2%;
   font-family: "Dancing Script";
   color: #ffffff;
@@ -37,7 +44,7 @@ img{
   box-shadow: 5px 5px 10px 5px  rgba(0, 0, 0, 0.5); 
   background: #4b4545;
   border-radius: 100px;
-  z-index: 2; 
+  z-index: 6; 
 }
 .adorno, .adorno2 {
   position: relative;
@@ -45,12 +52,12 @@ img{
   margin-top: -20%;
   height: 100%;
   width: 260%;
-  z-index: 1;
+  z-index: 5;
 }
 .adorno2 {
   left: -32%;
-  top: -2%;
-  margin-top: 60%;
+  top: 60%;
+  margin-top: 100%;
   height: 66%;
   width: 165%;
 }

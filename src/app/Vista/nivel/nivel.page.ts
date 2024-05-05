@@ -10,6 +10,8 @@ export class NivelPage implements OnInit {
   pagina: any;  // Variable para almacenar el parámetro 'encender'
   led: any; //Variables para leer el vector de los niveles
   led2: any;
+  nota:any;//Guardar en base de datos
+  nota2:any;
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
   link:string="";//Variables para las rutas de las imagenes
   link2:string="";
@@ -31,16 +33,24 @@ export class NivelPage implements OnInit {
   onSlideChange(event: any) {//Metodo para lectura de slider
     const activeIndex = event.detail.map((item: { activeIndex: any; }) => item.activeIndex)[0];//Obtiene el inice del slider
     if(this.pagina==1)//Si la pagina es 1
-      {
+      { 
         this.led = activeIndex; //Le el indice del vector
-        this.rout = set(ref(this.database, 'Notas'), this.led);//Esvribe el indice en la RTDB
-        this.link = this.notas[this.led];//Coloca la ruta de la imagen
+        this.led = this.led+this.led;
+        this.link = this.notas[activeIndex];//Coloca la ruta de la imagen
+        if(this.led<=4)
+          {
+            this.rout = set(ref(this.database, 'Notas'), this.led);//Esvribe el indice en la RTDB
+          }
+          if(this.led>4)
+            {
+            this.rout = set(ref(this.database, 'Notas'), this.led-1);//Esvribe el indice en la RTDB
+          }
       }
     if(this.pagina==2)
       {
         this.led2=activeIndex
-        this.link2 = this.acordes[this.led2];
-        this.rout = set(ref(this.database, 'Notas'), this.led2+7);    
+        this.link2 = this.acordes[activeIndex];
+        this.rout = set(ref(this.database, 'Notas'), this.led2+12);    
       }
   }
   private resetValues() {
