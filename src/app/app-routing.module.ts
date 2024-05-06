@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'nivel',
     loadChildren: () => import('./Vista/nivel/nivel.module').then( m => m.NivelPageModule)
+  },
+  {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./Vista/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
   }
 ];
 

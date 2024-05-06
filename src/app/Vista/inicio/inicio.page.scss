@@ -16,8 +16,11 @@ ion-content, ion-header {
   width: 100%;
   padding: 0%;
   margin: 0%;
+  height: 13%;
 }
 .opciones{
+  position: relative;
+  left: -13%;
   border-radius: 100px;
 }
 .radio-inputs {
@@ -25,7 +28,7 @@ ion-content, ion-header {
   display: flex;
   background-color: #EEE;
   box-sizing: border-box;
-  padding: 2%;
+  padding: 6%;
   width: 100%;
 }
 .radio-inputs .radio {

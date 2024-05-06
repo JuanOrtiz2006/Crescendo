@@ -4,36 +4,32 @@ import { AutenticacionService } from 'src/app/Servicio/autenticacion.service';
 import { Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Database, object, ref, set } from '@angular/fire/database';
-
 @Component({
-  selector: 'app-registro-usuario',
-  templateUrl: './registro-usuario.page.html',
-  styleUrls: ['./registro-usuario.page.scss'],
+  selector: 'app-inicio-sesion',
+  templateUrl: './inicio-sesion.page.html',
+  styleUrls: ['./inicio-sesion.page.scss'],
 })
-export class RegistroUsuarioPage implements OnInit {
+export class InicioSesionPage implements OnInit {
   errorRegistro: boolean = false; // Variable para controlar la visibilidad del mensaje de error
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
   constructor(private database:Database, public AutenticacionService: AutenticacionService, private router:Router, private alertController: AlertController) { }
   ngOnInit() {}
-  ruta(){
-    this.router.navigate(['../inicio-sesion']); // Pasar '1' como parámetro
-  }
-  async registrarUsuario(formulario: NgForm) {
+  async iniciarSesion(formulario: NgForm) {
     try {
-      const userCredential = await this.AutenticacionService.registrarUsuario(formulario.value.correo, formulario.value.clave);
-      this.mostrarAlerta("Bienvenido!","Felicidades, te haz registrado correctamente, inicia sesion para empezar ");
+      const userCredential = await this.AutenticacionService.iniciarSesion(formulario.value.correo, formulario.value.clave);
+      // Verifica si la autenticación fue exitosa
       if (userCredential) {
-        // Accede a la propiedad `user` del objeto `UserCredential`
-        const user = userCredential.user;
-        // Obtén el `uid` del usuario autenticado
-        const uid = user.uid;
-        // Muestra el `uid` en la consola
-        console.log('UID del usuario autenticado:', uid);
-        this.rout = set(ref(this.database, 'Usuarios/'+uid+'/nombre'), formulario.value.nombre);//Esvribe el indice en la RTDB
-        this.rout = set(ref(this.database, 'Usuarios/'+uid+'/correo'), formulario.value.correo);//Esvribe el indice en la RTDB
-      }   
+          // Accede a la propiedad `user` del objeto `UserCredential`
+          const user = userCredential.user;
+          // Obtén el `uid` del usuario autenticado
+          const uid = user.uid;
+          // Muestra el `uid` en la consola
+          console.log('UID del usuario autenticado:', uid);
+          this.rout = set(ref(this.database, 'Usuario/correo'), userCredential.user.email);//Esvribe el indice en la RTDB
+          this.router.navigate(['..//inicio', {uid}]); // Pasar '1' como parámetro
+      }          
     } catch (error) {
-      this.manejarError(error, "registro");
+      this.manejarError(error, "inicio");
     }
   }
   async manejarError(error: any, tipo: string) {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Database, object, ref, set } from '@angular/fire/database';
+import { Database, ref, get } from '@angular/fire/database';
 
 @Component({
   selector: 'app-inicio',
@@ -8,19 +8,41 @@ import { Database, object, ref, set } from '@angular/fire/database';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  pagina:string=""; 
-  return:any; 
-  rout:any; //variable para la ruta de lectura y excritura de la RTDB
+  uid: string | null = null; // Variable para almacenar el uid
+  nombre: string = ""; // Variable para almacenar el nombre del usuario
 
-  constructor(private database:Database, private router: Router, private route:ActivatedRoute) {}
-  
+  constructor(
+    private database: Database,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
   ngOnInit() {
-    this.rout = set(ref(this.database, 'Notas'), 99);//Esvribe el indice en la RTDB
+    // Suscríbete a los parámetros de la ruta para obtener el uid
+    this.route.params.subscribe(async params => {
+      this.uid = params['uid']; // Almacena el uid en la variable 'uid'
+      
+      if (this.uid) {
+        // Usa el uid para leer el nombre del usuario de la base de datos
+        const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
+        
+        // Realiza la consulta a la base de datos
+        const snapshot = await get(userRef);
+        if (snapshot.exists()) {
+          // Almacena el nombre en la variable 'nombre'
+          this.nombre = snapshot.val();
+          console.log('Nombre del usuario:', this.nombre);
+        } else {
+          console.log('No se encontró el nombre del usuario');
+        }
+      }
+    });
   }
   irPagina(encender: string) {
     this.router.navigate(['../nivel', { encender}]); // Pasar '1' como parámetro
   }
   irPagina2(pagina:string) {
-    this.router.navigate(['../biblioteca']);
+    const name=this.nombre;
+    this.router.navigate(['../biblioteca', {name}]);
   }
 }

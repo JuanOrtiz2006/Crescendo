@@ -11,10 +11,6 @@
       <ion-card class="login-box">
         <form #formulario="ngForm">
           <div class="user-box">
-            <input type="text" name="nombre" required="" ngModel>
-            <label>Nombre</label>
-          </div>
-          <div class="user-box">
             <input type="text" name="correo" required="" ngModel>
             <label>Mail</label>
           </div>
@@ -22,8 +18,7 @@
             <input type="password" name="clave" required="" ngModel>
             <label>Password</label>
           </div>
-          <a (click)="registrarUsuario(formulario)"> Registrarse <span></span></a>
-          <a (click)="ruta()">Iniciar sesion </a>
+          <a (click)="iniciarSesion(formulario)">Ingresar<span></span></a>
         </form>
       </ion-card> 
     </ion-col>

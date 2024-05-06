@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Database, object, ref, set,get } from '@angular/fire/database';
+
 @Component({
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.page.html',
@@ -8,6 +10,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class BibliotecaPage implements OnInit {
   messageHtml:any;
+  uid: string | null = null; // Cambiado a tipo string o null
+  nombre: string = ''; // Cambiado a tipo string
+  private routeSub: any; // Variable para manejar la suscripción a la ruta
   acordes=['../../../assets/Imagenes/Do.svg', 
           '../../../assets/Imagenes/Re.svg', 
           '../../../assets/Imagenes/Mi.svg', 
@@ -22,10 +27,32 @@ export class BibliotecaPage implements OnInit {
             '../../../assets/Imagenes/Solm.svg', 
             '../../../assets/Imagenes/Lam.svg', 
             '../../../assets/Imagenes/Sim.svg'];
-  constructor(private router: Router, private route: ActivatedRoute, private alertController:AlertController) {}
-  ngOnInit() {}
+  constructor(private database:Database, private router: Router, private route: ActivatedRoute, private alertController:AlertController) {}
+  ngOnInit() {
+    // Suscríbete a los parámetros de la ruta para obtener el uid
+    this.routeSub = this.route.params.subscribe(async params => {
+      this.uid = params['uid'];
+      
+      if (this.uid) {
+        // Usa el uid para leer el nombre del usuario de la base de datos
+        const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
+        const snapshot = await get(userRef);
+        
+        if (snapshot.exists()) {
+          // Almacena el nombre en la variable 'nombre'
+          this.nombre = snapshot.val();
+          console.log('Nombre del usuario:', this.nombre);
+        } else {
+          console.log('No se encontró el nombre del usuario');
+        }
+      }
+    });
+  }
+
+  // Función para navegar a la página de inicio
   irInicio(pagina:string) {
-    this.router.navigate(['../inicio']);
+    // Asegúrate de pasar `uid` y `nombre` como parámetros si es necesario
+    this.router.navigate(['../inicio', { uid: this.uid, nombre: this.nombre }]);
   }
   async presentAlert(dato: number) {
     if(dato==1)
