@@ -4,6 +4,7 @@ import { AutenticacionService } from 'src/app/Servicio/autenticacion.service';
 import { Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Database, object, ref, set } from '@angular/fire/database';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.page.html',
@@ -12,8 +13,10 @@ import { Database, object, ref, set } from '@angular/fire/database';
 export class InicioSesionPage implements OnInit {
   errorRegistro: boolean = false; // Variable para controlar la visibilidad del mensaje de error
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
-  constructor(private database:Database, public AutenticacionService: AutenticacionService, private router:Router, private alertController: AlertController) { }
-  ngOnInit() {}
+  constructor(private database:Database, public AutenticacionService: AutenticacionService, private router:Router, private alertController: AlertController, private storage:Storage) { }
+  async ngOnInit() {
+    await this.storage.create();
+  }
   async iniciarSesion(formulario: NgForm) {
     try {
       const userCredential = await this.AutenticacionService.iniciarSesion(formulario.value.correo, formulario.value.clave);
@@ -23,10 +26,9 @@ export class InicioSesionPage implements OnInit {
           const user = userCredential.user;
           // Obtén el `uid` del usuario autenticado
           const uid = user.uid;
-          // Muestra el `uid` en la consola
-          console.log('UID del usuario autenticado:', uid);
-          this.rout = set(ref(this.database, 'Usuario/correo'), userCredential.user.email);//Esvribe el indice en la RTDB
-          this.router.navigate(['..//inicio', {uid}]); // Pasar '1' como parámetro
+          //Guarda el uid en el local storage
+          this.storage.set("id", uid);
+          this.router.navigate(['..//inicio']);
       }          
     } catch (error) {
       this.manejarError(error, "inicio");

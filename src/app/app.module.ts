@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HtmlTagDefinition } from '@angular/compiler';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    IonicStorageModule.forRoot()
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

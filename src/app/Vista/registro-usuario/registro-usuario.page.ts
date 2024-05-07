@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { AutenticacionService } from 'src/app/Servicio/autenticacion.service';
-import { Router} from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { AlertController } from '@ionic/angular';//Importacion de libreria para alertas
+import { AutenticacionService } from 'src/app/Servicio/autenticacion.service';//Importacion del servicio
+import { Router} from '@angular/router'; //Importacion de libreriar de enrutamiento
+import { NgForm } from '@angular/forms'; //Importacion de libreriar de ngForm
 import { Database, object, ref, set } from '@angular/fire/database';
-
 @Component({
   selector: 'app-registro-usuario',
   templateUrl: './registro-usuario.page.html',
@@ -13,10 +12,11 @@ import { Database, object, ref, set } from '@angular/fire/database';
 export class RegistroUsuarioPage implements OnInit {
   errorRegistro: boolean = false; // Variable para controlar la visibilidad del mensaje de error
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
-  constructor(private database:Database, public AutenticacionService: AutenticacionService, private router:Router, private alertController: AlertController) { }
+  constructor(private database:Database, public AutenticacionService: AutenticacionService, private router:Router, private alertController: AlertController) {
+  }
   ngOnInit() {}
   ruta(){
-    this.router.navigate(['../inicio-sesion']); // Pasar '1' como parámetro
+    this.router.navigate(['../inicio-sesion']); 
   }
   async registrarUsuario(formulario: NgForm) {
     try {
