@@ -48,9 +48,9 @@ export class BibliotecaPage implements OnInit {
   }
 
   // Función para navegar a la página de inicio
-  irInicio(pagina:string) {
+  irinicio() {
     // Asegúrate de pasar `uid` y `nombre` como parámetros si es necesario
-    this.router.navigate(['../inicio', { uid: this.uid, nombre: this.nombre }]);
+    this.router.navigate(['../inicio']);
   }
   async presentAlert(dato: number) {
     if(dato==1)

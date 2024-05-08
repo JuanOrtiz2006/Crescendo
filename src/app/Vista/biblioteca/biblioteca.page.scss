@@ -18,17 +18,16 @@ ion-content, ion-header {
   margin: 0%;
   height: 13%;
 }
-.contenedor{
-  position: relative;
-  height: auto;
-  margin-bottom: -5%;
-}
-.imagen{
-  height: 100%;
+ion-avatar{
+  width: 70%;
+  height: 70%;
+  background-color: #EEE; 
+  margin-left: 5%; 
+  margin-top: 5%;
 }
 .opciones{
   position: relative;
-  left: -11%;
+  left: -12%;
   border-radius: 100px;
 }
 .radio-inputs {
@@ -66,25 +65,31 @@ ion-content, ion-header {
 //===========================================================RESPONSIVE===========================================
 @media screen   and (min-height: 200px)
 {
-  .opciones{margin-top: 1%; margin-bottom: 0%;}
-  .contenedor {width: 100%; margin-top: 5%; margin-left: 0%; z-index: 1;}
+  .header{ padding: 5%;}
+  ion-avatar{ width: 50%; height: 100%; margin-left: -5%; margin-top: -25%;}
+  .radio-inputs {padding: 1%;}
+  .opciones{margin-top: -8%;}
+  .contenedor { z-index: 1;margin-top: 10%; margin-left: 0%; width: 100%; height: 80%;}
 }
 @media screen   and (min-height: 250px)
 {
-  .opciones{margin-top: 1%; margin-bottom: 0%;}
-  .contenedor {width: 100%; margin-top: 10%; margin-left: 0%; z-index: 1; height: 160%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -20%; margin-left: -27%; width: 150%; height: 200%; }
+  .contenedor {margin-top: 20%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -25%; margin-left: -12%; width: 122%; height: 200%; }
 }
 @media screen   and (min-height: 300px)
 {
-  .contenedor {z-index: 1; margin-top: 15%; height: 100%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -24%; margin-left: -15%; width: 130%; height: 180%; }
+  .header{ padding: 6%;}
+  .contenedor {margin-top: 20%; height: 90%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -30%;}
 }
 @media screen   and (min-height: 400px)
 {
-  img{height: 100%;}
-  .contenedor {z-index: 1; margin-left: 10%; margin-top: 20%; height: 80%; width: 80%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -20%; margin-left: -15%; width: 130%; height: 190%; }
+  .header{ padding: 7%;}
+  ion-avatar{ width: 60%; margin-left: -10%; margin-top: -30%;}
+  .radio-inputs {padding: 3%;}
+  .opciones{margin-top: -10%;}
+  .contenedor { margin-top: 25%; height: 100%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -35%;}
 }
 @media screen   and (min-height: 500px)
 {
@@ -93,12 +98,26 @@ ion-content, ion-header {
 }
 @media screen   and (min-height: 600px)
 {
-  .contenedor {width: 85%; margin-top: 2%; margin-left: 8%; height: 80%; z-index: 1;}
-  .adorno2{ display:flex; position:fixed; margin-top: -57%; margin-left: -27.5%; width: 150%; height: 51%; }
+  .header{ padding: 5%;}
+  ion-avatar{ width: 90%; margin-top: -25%;}
+  .radio-inputs {padding: 4%;}
+  .opciones{margin-top: -4%;}
+  .contenedor{margin-top: 5%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
+}
+@media screen   and (min-height: 630px) and (min-width: 350px)
+{
+  .contenedor{margin-top: 3%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
 }
 @media screen   and (min-height: 700px)
 {
-  .contenedor {width: 90%; margin-top: 5%; margin-left: 5%; z-index: 1;}
+  .header{ padding: 5%;}
+  ion-avatar{ width: 95%; margin-top: -18%; margin-left: -25%;}
+  .radio-inputs {padding: 4%;}
+  .opciones{margin-top: 0%;}
+  .contenedor{margin-top: 7%;}
+  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
 }
 @media screen   and (min-height: 800px)
 {

@@ -2,21 +2,21 @@
   <ion-header class="header">
     <ion-grid>
       <ion-row>
-        <ion-col size="3">
-          <ion-avatar style="background-color: #EEE; margin-left: 10%; margin-top: 5%;"><img src="../../../assets/Imagenes/Logo.svg">
-          </ion-avatar>
-          <ion-label style="font-size: 90%; text-align: center; position: fixed; margin-top: 1%;">{{nombre}}</ion-label>
-      </ion-col>
-        <ion-col size="9">
+        <ion-col  size-xs="3" size-sm="3" size-md="3" size-lg="3" >
+            <ion-avatar><img src="../../../assets/Imagenes/Logo.svg">
+            </ion-avatar>
+            <ion-label style="font-size: 90%; text-align: center; position: fixed; margin-top: 1%;">{{nombre}}</ion-label>
+        </ion-col>
+        <ion-col  size-xs="9" size-sm="9" size-md="9" size-lg="9" >
           <ion-card class="opciones">
             <ion-label class="radio-inputs">
-              <label class="radio" (click)="irInicio('si')">
+              <label class="radio" (click)="irinicio()">
                 <input type="radio" disabled>
                 <span class="name"><ion-icon  name="play" style="color: #333;"></ion-icon></span>
               </label>
               <label class="radio">
-                <input type="radio"  checked="">
-                <span class="name"><ion-icon  name="folder" style="color: #EEE;"></ion-icon></span>
+                <input type="radio" checked>
+                <span class="name"><ion-icon  name="folder" style="color:#EEE;"></ion-icon></span>
               </label>
             </ion-label>
           </ion-card>
@@ -26,19 +26,19 @@
   </ion-header> 
   <ion-grid  style="overflow-y: auto; max-height: 100%;">
     <ion-row>
-      <ion-col class="video" size-xs="12" size-sm="4" size-md="12" size-lg="12" >
+      <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img class="imagen"  (click)="presentAlert(1)" src="../../../assets/Imagenes/Portadas/BiblioMayores.svg">
+          <img  width="100%" height="100%" (click)="presentAlert(1)" src="../../../assets/Imagenes/Portadas/BiblioMenores.svg">
         </ion-card>
       </ion-col>
-      <ion-col class="video" size-xs="12" size-sm="4" size-md="12" size-lg="12" >
+      <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img class="imagen"  (click)="presentAlert(2)" src="../../../assets/Imagenes/Portadas/BiblioMenores.svg">
+          <img width="100%" height="100%" (click)="presentAlert(2)" src="../../../assets/Imagenes/Portadas/BiblioMayores.svg">
         </ion-card>
       </ion-col>
-      <ion-col class="video" size-xs="12" size-sm="4" size-md="12" size-lg="12" >
+      <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img class="imagen" (click)="presentAlert(3)" src="../../../assets/Imagenes/Portadas/BiblioMenores.svg">
+          <img width="100%" height="100%" (click)="presentAlert(3)" src="../../../assets/Imagenes/Portadas/escalas.svg">
         </ion-card>
       </ion-col>
       <ion-col size="12" >

@@ -10,12 +10,11 @@
   width: 100%;
 }
 .adorno {
+  position:relative;
+  overflow: visible;
+  margin-top: -20%;
   width: auto;
   height: 120%;
-  overflow: visible;
-  position:relative;
-  margin-top: -20%;
-  color: antiquewhite;
 }
 img {
   margin-top: -15%;
@@ -27,13 +26,19 @@ img {
   background: #ffffff;
   box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.65);
 }
-.login-box {
+.texto{
+  position: fixed;
+  font-size: 100%;
+  top:5%;
+  left: 5%;
+  
+}
+.login-box {//Carta
   position: relative;
-  top: 5%; 
+  margin-top: 30%; 
   margin-left: 50%;
   width: 90%;
-  padding: 40px;
-  margin-top: 30%;
+  padding: 50px;
   transform: translate(-50%, -50%);
   background: rgba(35, 32, 32, 0.942);
   box-sizing: border-box;
@@ -45,8 +50,7 @@ img {
 }
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 100%;
+  padding: 7px;//Paddin de las lineas de registro
   color: #fff;
   margin-bottom: 30px;
   border: none;
@@ -66,23 +70,22 @@ img {
   transition: .5s;
 }
 .login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
+.login-box .user-box input:valid ~ label {//Transicion de inputs
+  top: -10px;
   left: 0;
   color: #bdb8b8;
-  font-size: 80%;
+  font-size: 100%;
 }
-.login-box form a {
+.login-box form a {//Boton de iniciiar
   position: relative;
   display: inline-block;
-  padding: 3%;
   color: #ffffff;
   font-family: "Satisfy"  ;
   font-size: 200%;
   text-decoration: none;
   overflow: hidden;
   transition: .5s;
-  margin-top: 5%;
+  margin-top: 1%;
   letter-spacing: 4px;
 }
 .login-box a:hover {
@@ -98,7 +101,6 @@ img {
   position: absolute;
   display: block;
 }
-
 @keyframes btn-anim1 {
   0% {
     left: -100%;
@@ -107,74 +109,11 @@ img {
     left: 100%;
   }
 }
-.login-box a span:nth-child(1) {
+.login-box a span:nth-child(1) {//Linea en movimiento
   bottom: 2px;
   left: -100%;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, #ffffff);
   animation: btn-anim1 2s linear infinite;
 }
-
-/* Media Queries */
-@media screen  and (max-height: 300px) {
-  img {display: none;}
-  .login-box {top: -70%;}
-  .login-box form a {margin: -2%;margin-left: 5%;}
-}
-
-
-@media screen and (min-height: 300px) and (max-height: 500px) {
-  img {display: flex; margin-top: -40%; margin-bottom: 5%; width: 35%; height: 200%;}
-  .login-box {margin-top: -20%;}
-  .login-box form a {margin: -2%;margin-left: 5%;}
-}
-
-
-
-@media screen and (min-height: 700px) {
-  .adorno{
-    margin-top: -10%;
-  }
-}
-@media screen and (min-height: 800px) {
-  .adorno2{
-    top: 10%;    
-  }
-}
-@media screen and (min-height: 900px) {
-  .adorno{
-    margin-top: 0%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

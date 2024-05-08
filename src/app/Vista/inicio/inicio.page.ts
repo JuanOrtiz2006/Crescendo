@@ -15,28 +15,23 @@ export class InicioPage implements OnInit {
   constructor(private database: Database, private router: Router, private route: ActivatedRoute, private storage:Storage){
   }
   async ngOnInit() {
-    this.uid=await this.storage.get("id");
-    // Usa el uid para leer el nombre del usuario de la base de datos
-    const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
-    
+    this.uid= await this.storage.get("id");
+    const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`); // Usa el uid para leer el nombre del usuario de la base de datos
     const snapshot = await get(userRef);
     if (snapshot.exists()) {
-      // Almacena el nombre en la variable 'nombre'
-      this.nombre = snapshot.val();
+      this.nombre = snapshot.val();// Almacena el nombre en la variable 'nombre'
       await this.storage.set("usuario:",this.nombre);
       const name = this.storage.get("usuario");
       this.message = `Got value ${name}`;
-      console.log(this.message);
     } else {
       console.log('No se encontró el nombre del usuario');
     }
-
   }
   irPagina(encender: string) {
     this.router.navigate(['../nivel', { encender}]); // Pasar '1' como parámetro
   }
   irPagina2(pagina:string) {
     const name=this.nombre;
-    this.router.navigate(['../biblioteca', {name}]);
+    this.router.navigate(['../biblioteca']);
   }
 }
