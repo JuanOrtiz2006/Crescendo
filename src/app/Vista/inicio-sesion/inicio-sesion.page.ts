@@ -56,6 +56,7 @@ export class InicioSesionPage implements OnInit {
         break;
       default:
         mensaje = "Se produjo un error durante el proceso de " + error.code + ".";
+        console.log(error);
         break;
     }
     await this.mostrarAlerta("Error de " + tipo, mensaje);//Envia mensaje al metodo de Alerta

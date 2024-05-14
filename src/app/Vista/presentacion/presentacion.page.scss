@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&family=Bree+Serif&family=Caveat:wght@400..700&family=Kaushan+Script&family=Yellowtail&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Briem+Hand:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poetsen+One&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Mr+Dafoe&family=Pacifico&display=swap');
 
 .presentacion *,
 .boton {
@@ -12,92 +11,60 @@
   width: 100%;
   position: relative;
 }
+.adorno, .adorno2 {
+  position: relative;
+  left: -58%;
+  top: -5%;
+  height: 75%;
+  width: auto;
+  z-index: 1;
+}
 #Titulo {
   color: #333;
-  font-family: "Bree Serif", serif;
+  font-family: "Mr Dafoe" ;
   color: #090909;
-  font-family: "Alegreya", serif;
-    font-size: 400%;
+  font-size: 460%;
   position: fixed;
   top: 20%;
   text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); 
   z-index: 1;
-
-}
-
-img{
-  margin-top: -15%;
-  margin-top: -6%;
-  margin-bottom: -35%;
-  position: fixed;
-  z-index: 0;
-  height: 38%;
-  width: 95%;
-
-
 }
 .boton {
   position: fixed;
   left: 50%;
-  width: 35%;
-  margin-top: 13%;
-  left: 12%;
-  width: 75%;
+  width: 45%;
   padding: 2%;
   font-family: "Dancing Script";
   color: #ffffff;
-  font-size: 150%;
-  box-shadow: 5px 5px 10px 5px  rgba(0, 0, 0, 0.5); 
+  font-size: 200%;
+  box-shadow: 5px 5px 10px 5px  rgba(0, 0, 0, 0.681); 
   background: #4b4545;
   border-radius: 100px;
   z-index: 2; 
-  z-index: 6; 
-}
-.adorno, .adorno2 {
-  position: relative;
-  left: -81%;
-  margin-top: -20%;
-  height: 100%;
-  width: 260%;
-  z-index: 1;
-  z-index: 5;
 }
 .adorno2 {
-  left: -60%;
-  top: 60%;
-  margin-top: -10%;
-  height: 66%;
-  width: 200%;
+  left: -23%;
+  height: 95%;
+  width: auto;
 }
-@media screen and (min-width: 500px) {
-  .adorno2{margin-top: 10%;}
+
+@media screen   and (max-height: 200px)
+{
+  .adorno, .adorno2 {left: -45%;margin-top: -20%;height: 200%;}
+  #Titulo {font-size: 600%; top: 15%;}  
+  .adorno2 {display: none;}  
+  .boton {top:65%;left:60%;width: 30%;font-size: 200%;}
 }
-@media screen and (min-height: 700px) {
-  .adorno{margin-top: -10%;}
-  .adorno2{margin-top: 40%;}
+@media screen   and (max-height: 400px)
+{
+  .adorno, .adorno2 {left: -45%;margin-top: -20%;height: 200%;}
+  #Titulo {font-size: 600%; top: 15%;}  
+  .adorno2 {display: none;}  
+  .boton {top:65%;left:60%;width: 30%;font-size: 200%;}
 }
-@media screen and (min-height: 800px) {
-  #Titulo{margin-top: -10%; font-size: 900%;}
-  .adorno{margin-top: -10%;}
-  .adorno2{margin-top: 40%;}
-  .boton{font-size: 200%;top: 50%;width: 50%;margin-left: -5%;}
-}
-@media screen and (min-height: 900px) {
-  .adorno2{margin-top: 21%;}
-}
-@media screen and (min-height: 1000px) { 
-  #Titulo{margin-top: -30%;}
-  .boton{top: 1%;font-size: 300%;}
-  .adorno {margin-top: -15%;}
-  .adorno2 {margin-top: 20%;}
-}
-@media screen and (min-width: 1024px) and (min-height: 700px) {
-  .adorno{top: -44%;}
-  #Titulo{margin-top: -40%;font-size: 800%;}
-  .boton{margin-left: 5%;top: -150%;width: 40%;font-size: 300%;}
-}
-@media screen and (min-width: 600px) and (max-height: 400px) {
-  .adorno{top: -24%;}
-  #Titulo{margin-top: -55%; font-size: 700%;}
-  .boton{margin-left: 12%; margin-top: -60%; width: 30%;}
+@media screen   and (min-height: 700px)
+{
+  #Titulo {font-size: 500%; top: 15%;}  
+  .adorno2 {top: 15%;height: 100%;}  
+  .boton {top:55%;left:45%;width: 45%;font-size: 250%;}
 }

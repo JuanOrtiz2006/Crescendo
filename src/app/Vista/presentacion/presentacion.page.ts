@@ -10,9 +10,13 @@ export class PresentacionPage implements OnInit {
   constructor(private router:Router, private storage:Storage) { }
   ngOnInit() {
     this.storage.create();
+    this.cleanRDTB();
+  }
+  async cleanRDTB()
+  {
     this.storage.remove('id');
     const dato=this.storage.get('id');
-    console.log(dato);
+    console.log(dato);    
   }
   irPagina() {
     this.router.navigate(['../registro-usuario']); //Metodo para ir a la pagina de registro

@@ -47,7 +47,7 @@
         <swiper-slide><img [src]="link" width="75%" height="100%"></swiper-slide>
       </swiper-container>
     </ion-col>
-  </ion-row><ion-grid class="inicio">
+  </ion-row>
   <ion-row *ngIf="pagina == 2">
     <ion-col size="12">
       <ion-label class="regreso-label" (click)="irPagina(2)" style="color: rgb(0, 0, 0); font-family: 'Dancing Script';">Regresar</ion-label>
@@ -71,3 +71,14 @@
       </swiper-container>
     </ion-col>
   </ion-row>
+  <ion-row *ngIf="pagina == 3">
+    <ion-col size="12">
+      <ion-label class="regreso-label" (click)="irPagina(2)" style="color: rgb(0, 0, 0); font-family: 'Dancing Script';">Regresar</ion-label>
+    </ion-col>
+    <ion-col size="12">
+        <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
+          <swiper-slide><video id="video" src="../../../assets/Imagenes/himno.mp4" width="90%" height="100%" autoplay playsinline controls></video></swiper-slide>
+        </swiper-container>
+    </ion-col>
+  </ion-row>
+</ion-grid>

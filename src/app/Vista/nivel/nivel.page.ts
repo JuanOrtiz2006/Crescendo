@@ -48,10 +48,20 @@ export class NivelPage implements OnInit {
       }
     if(this.pagina==2)
       {
-        this.led2=activeIndex
+        this.led2=activeIndex;
         this.link2 = this.acordes[activeIndex];
         this.rout = set(ref(this.database, 'Notas'), this.led2+12);    
+    }
+    
+    if(this.pagina==3){
+       // Selecciona el elemento de video
+      const video = document.getElementById('video') as HTMLVideoElement;
+      video.addEventListener('timeupdate', () => {
+      if(video.currentTime>=0){
+        this.rout = set(ref(this.database, 'Notas'), 26);    
       }
+    });
+  }
   }
   private resetValues() {
     this.led = 0;
