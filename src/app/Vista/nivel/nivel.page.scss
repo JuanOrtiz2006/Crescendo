@@ -130,6 +130,9 @@ ion-card{
 @media screen and (max-height: 300px) {
   ion-card{ position: relative; top: -17%; padding: 5%;
   }
+  img{
+    height: 50%;
+  }
   video{
     margin-top: -5%;
     height: 50%;

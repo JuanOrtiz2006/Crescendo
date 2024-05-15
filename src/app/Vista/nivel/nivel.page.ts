@@ -52,7 +52,7 @@ export class NivelPage implements OnInit {
         this.led2=activeIndex;
         this.link2 = this.acordes[activeIndex];
         this.rout = set(ref(this.database, 'Notas'), this.led2+12);    
-    }
+    } else{}
     if(this.pagina==3){
       if(this.nivel==1){
         this.led3=activeIndex;
