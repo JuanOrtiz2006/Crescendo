@@ -32,7 +32,7 @@ ion-avatar{
 }
 .contenedor{
   position: relative;
-  left: 17%;
+  left: 10%;
 }
 img{
   width: 100%;
@@ -87,7 +87,7 @@ img{
 @media screen   and (min-height: 300px)
 {
   .header{ padding: 6%;}
-  .contenedor {margin-top: 20%; height: 70%; margin-left: -18%;}
+  .contenedor {margin-top: 25%; height: 70%; margin-left: -10%;}
   .adorno2{ display:flex; position:fixed; margin-top: -30%;}
 }
 @media screen   and (min-height: 400px)

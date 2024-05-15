@@ -13,6 +13,33 @@ export class InicioPage implements OnInit {
   message:string="";
   rout:any;
   reset:any;
+  isActionSheetOpen = false;
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
+  setOpen(isOpen: boolean) {
+    this.isActionSheetOpen = isOpen;
+  }
   constructor(private database: Database, private router: Router, private route: ActivatedRoute, private storage:Storage){
   }
   async ngOnInit() { 
