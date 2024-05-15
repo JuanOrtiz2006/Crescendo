@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Database, object, ref, set } from '@angular/fire/database';
+import { NavigationEnd } from '@angular/router';
+
 @Component({
   selector: 'app-nivel',
   templateUrl: './nivel.page.html',
@@ -11,7 +13,9 @@ export class NivelPage implements OnInit {
   led: any; //Variables para leer el vector de los niveles
   nivel:number=0;
   led2: any;
+  ejercicio:number=0;
   led3:any;
+  db:any;
   nota:any;//Guardar en base de datos
   nota2:any;
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
@@ -22,7 +26,15 @@ export class NivelPage implements OnInit {
   acordes: any[] = ["../../../assets/Imagenes/Do.svg", "../../../assets/Imagenes/Re.svg", "../../../assets/Imagenes/Mi.svg", "../../../assets/Imagenes/Fa.svg", "../../../assets/Imagenes/Sol.svg", "../../../assets/Imagenes/La.svg", 
                     "../../../assets/Imagenes/Si.svg", "../../../assets/Imagenes/Dom.svg", "../../../assets/Imagenes/Rem.svg","../../../assets/Imagenes/Mim.svg", "../../../assets/Imagenes/Fam.svg", "../../../assets/Imagenes/Solm.svg",
                     "../../../assets/Imagenes/Lam.svg", "../../../assets/Imagenes/Sim.svg"];
-  constructor(private database:Database, private router: Router, private route: ActivatedRoute) {}
+  constructor(private database:Database, private router: Router, private route: ActivatedRoute) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/inicio') {
+          this.rout = set(ref(this.database, 'Notas'), 99);
+        }
+      }
+    });
+  }
   ngOnInit() {
     this.route.params.subscribe(params => {// Suscríbete a los parámetros de la ruta para obtener 'encender'
     this.pagina = params['encender'];  // Almacena el valor de 'encender' en la variable 'pagina'
@@ -33,7 +45,8 @@ export class NivelPage implements OnInit {
   }
   onSlideChange(event: any) {//Metodo para lectura de slider
     const activeIndex = event.detail.map((item: { activeIndex: any; }) => item.activeIndex)[0];//Obtiene el inice del slider
-    if(this.pagina==1)//Si la pagina es 1
+    try{
+      if(this.pagina==1)//Si la pagina es 1
       { 
         this.led = activeIndex; //Le el indice del vector
         this.led = this.led+this.led;
@@ -63,6 +76,10 @@ export class NivelPage implements OnInit {
       this.rout = set(ref(this.database, 'Notas'), this.led3+27);
       }
     } 
+    } catch
+    {
+      this.rout = set(ref(this.database, 'Notas'), 99);    
+    }
   }
   
 }

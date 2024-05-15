@@ -15,7 +15,8 @@ export class InicioPage implements OnInit {
   reset:any;
   constructor(private database: Database, private router: Router, private route: ActivatedRoute, private storage:Storage){
   }
-  async ngOnInit() {  
+  async ngOnInit() { 
+    this.rout = set(ref(this.database, 'Notas'), 99);       
     this.uid= await this.storage.get("id");
     const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`); // Usa el uid para leer el nombre del usuario de la base de datos
     const snapshot = await get(userRef);
