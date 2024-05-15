@@ -117,3 +117,35 @@ img {
   background: linear-gradient(90deg, transparent, #ffffff);
   animation: btn-anim1 2s linear infinite;
 }
+
+@media screen and (max-height: 400px) {
+  img {display: none;}
+  .login-box {top: -40%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
+}
+@media screen and (max-height: 500px) {
+  .login-box {top: -30%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
+}
+
+@media screen and (max-height: 500px) {
+  img {display: none;}
+  .login-box {margin-top: -10%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
+}
+
+@media screen and (min-height: 700px) {
+  .adorno{
+    margin-top: -10%;
+  }
+}
+@media screen and (min-height: 800px) {
+  .adorno2{
+    top: 10%;    
+  }
+}
+@media screen and (min-height: 900px) {
+  .adorno{
+    margin-top: 0%;
+  }
+}

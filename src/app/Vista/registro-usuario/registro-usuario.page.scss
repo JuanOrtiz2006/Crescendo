@@ -118,17 +118,17 @@ img {
 
 /* Media Queries */
 
-@media screen and (min-height: 300px) {
+@media screen and (max-height: 400px) {
   img {display: none;}
-  .login-box {margin-top: -23%;}
+  .login-box {top: -40%;}
   .login-box form a {margin: -5%;margin-left: 5%;}
 }
-@media screen and (min-height: 400px) {
-  .login-box {margin-top: -18%;}
+@media screen and (max-height: 500px) {
+  .login-box {top: -30%;}
   .login-box form a {margin: -5%;margin-left: 5%;}
 }
 
-@media screen and (min-height: 500px) {
+@media screen and (max-height: 500px) {
   img {display: none;}
   .login-box {margin-top: -10%;}
   .login-box form a {margin: -5%;margin-left: 5%;}
