@@ -117,20 +117,22 @@ img {
 }
 
 /* Media Queries */
-@media screen  and (max-height: 300px) {
+
+@media screen and (min-height: 300px) {
   img {display: none;}
-  .login-box {top: -70%;}
-  .login-box form a {margin: -2%;margin-left: 5%;}
+  .login-box {margin-top: -23%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
+}
+@media screen and (min-height: 400px) {
+  .login-box {margin-top: -18%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
 }
 
-
-@media screen and (min-height: 300px) and (max-height: 500px) {
-  img {display: flex; margin-top: -40%; margin-bottom: 5%; width: 35%; height: 200%;}
-  .login-box {margin-top: -20%;}
-  .login-box form a {margin: -2%;margin-left: 5%;}
+@media screen and (min-height: 500px) {
+  img {display: none;}
+  .login-box {margin-top: -10%;}
+  .login-box form a {margin: -5%;margin-left: 5%;}
 }
-
-
 
 @media screen and (min-height: 700px) {
   .adorno{
