@@ -67,6 +67,9 @@ export class NivelPage implements OnInit {
         this.rout = set(ref(this.database, 'Notas'), this.led2+12);    
     } else{}
     if(this.pagina==3){
+      if (this.nivel == 0) {
+        this.rout = set(ref(this.database, 'Notas'), 99); // Enviar 99 a la base de datos si el nivel es 0
+      }
       if(this.nivel==1){
         this.led3=activeIndex;
       this.rout = set(ref(this.database, 'Notas'), this.led3+26);
