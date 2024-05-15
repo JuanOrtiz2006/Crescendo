@@ -9,7 +9,9 @@ import { Database, object, ref, set } from '@angular/fire/database';
 export class NivelPage implements OnInit {
   pagina: any;  // Variable para almacenar el parámetro 'encender'
   led: any; //Variables para leer el vector de los niveles
+  nivel:number=0;
   led2: any;
+  led3:any;
   nota:any;//Guardar en base de datos
   nota2:any;
   rout:any; //variable para la ruta de lectura y excritura de la RTDB
@@ -24,7 +26,6 @@ export class NivelPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {// Suscríbete a los parámetros de la ruta para obtener 'encender'
     this.pagina = params['encender'];  // Almacena el valor de 'encender' en la variable 'pagina'
-    this.resetValues();//Llamado del metodo resetValues
     });
   }
   irPagina(n:number) {//Metodo para navegacion de pagina
@@ -52,20 +53,16 @@ export class NivelPage implements OnInit {
         this.link2 = this.acordes[activeIndex];
         this.rout = set(ref(this.database, 'Notas'), this.led2+12);    
     }
-    
     if(this.pagina==3){
-       // Selecciona el elemento de video
-      const video = document.getElementById('video') as HTMLVideoElement;
-      video.addEventListener('timeupdate', () => {
-      if(video.currentTime>=0){
-        this.rout = set(ref(this.database, 'Notas'), 26);    
+      if(this.nivel==1){
+        this.led3=activeIndex;
+      this.rout = set(ref(this.database, 'Notas'), this.led3+26);
       }
-    });
+      if(this.nivel==2){
+        this.led3=activeIndex;
+      this.rout = set(ref(this.database, 'Notas'), this.led3+27);
+      }
+    } 
   }
-  }
-  private resetValues() {
-    this.led = 0;
-    this.led2 = 0;
-    this.link = this.pagina === 1 ? this.notas[0] : this.acordes[0];
-  } 
+  
 }

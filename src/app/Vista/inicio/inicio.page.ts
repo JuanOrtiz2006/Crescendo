@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';//Importacion de libreriar de enrutamiento
-import { Database, ref, get } from '@angular/fire/database';//Importacion de librerias de firebase para la lctura y escritura de datos
+import { Database, ref, get,set } from '@angular/fire/database';//Importacion de librerias de firebase para la lctura y escritura de datos
 import { Storage } from '@ionic/storage-angular';//Importacion de libreria para el localStorage
 @Component({
   selector: 'app-inicio',
@@ -12,9 +12,10 @@ export class InicioPage implements OnInit {
   nombre: string = ""; // Variable para almacenar el nombre del usuario
   message:string="";
   rout:any;
+  reset:any;
   constructor(private database: Database, private router: Router, private route: ActivatedRoute, private storage:Storage){
   }
-  async ngOnInit() {
+  async ngOnInit() {  
     this.uid= await this.storage.get("id");
     const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`); // Usa el uid para leer el nombre del usuario de la base de datos
     const snapshot = await get(userRef);

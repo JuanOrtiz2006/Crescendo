@@ -28,13 +28,21 @@ ion-content, ion-header {
   font-family: "Dancing Script";
   font-size: 150%;
 }
-
 img{
   margin-top: -2%;
   margin-left: 10%;
 }
 video{
   margin-left: 5%;
+}
+ion-card{
+  text-align: center;
+  width: 50%;
+  margin-top: 3%;
+  margin-left: 25%;
+  padding: 7%;
+  font-family: "Dancing Script";
+  font-size: 150%;
 }
 //==========================Carta
 .e-card {
@@ -117,4 +125,15 @@ video{
 }
 @media screen and (orientation: landscape) {
   .inicio{display: block;}
+}
+
+@media screen and (max-height: 300px) {
+  ion-card{ position: relative; top: -17%; padding: 5%;
+  }
+  video{
+    margin-top: -5%;
+    height: 50%;
+    width: 70%;
+    margin-left: 16%;
+  }
 }
