@@ -1,104 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Mr+Dafoe&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
 
-.presentacion *,
-.boton {
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.presentacion { 
-  background: #ffffff; 
-  background: #FAFAF7; 
+
+body, html {
+  height: 100%;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(135deg, #3a3d40, #1c1c1e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
   height: 100%;
   width: 100%;
-  position: relative;
+  overflow: hidden;
 }
-.adorno, .adorno2 {
-  position: relative;
-  left: -58%;
-  margin-top: -5%;
-  height: 75%;
-  width: auto;
-  z-index: 1;
-}
+
 #Titulo {
-  color: #333;
-  font-family: "Mr Dafoe" ;
-  color: #090909;
-  font-size: 460%;
-  position: fixed;
-  top: 20%;
-  text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5); 
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(4rem, 5vw, 6rem);
+  color: #fff;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+  z-index: 2;
+  animation: fadeIn 2s ease-out;
+  animation: flotar 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.boton {
+  background: #f77f00;
+  color: #fff;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  z-index: 2;
+  margin-top: 3rem;
+}
+
+.boton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background-color: #d65f00;
+}
+
+.boton:active {
+  transform: scale(0.95);
+}
+
+.adorno {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  height: 15vmax;
+  width: 15vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.adorno2 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  height: 20vmax;
+  width: 20vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.notas {
+  position: absolute;
+  font-size: clamp(2rem, 4vw, 4rem);
+  color: rgba(255, 255, 255, 0.2);
+  animation: flotar 6s ease-in-out infinite;
   z-index: 1;
 }
-.boton {
-  position: fixed;
-  left: 50%;
-  width: 45%;
-  padding: 2%;
-  font-family: "Dancing Script";
-  color: #ffffff;
-  font-size: 200%;
-  box-shadow: 5px 5px 10px 5px  rgba(0, 0, 0, 0.681); 
-  background: #4b4545;
-  border-radius: 100px;
-  z-index: 2; 
-}
-.adorno2 {
-  left: -23%;
-  height: 95%;
-  width: auto;
+
+.nota1 {
+  top: 20%;
+  left: 15%;
 }
 
-@media screen   and (max-height: 200px)
-{
-  .adorno, .adorno2 {left: -45%;margin-top: -20%;height: 200%;}
-  #Titulo {font-size: 600%; top: 15%;}  
-  .adorno2 {display: none;}  
-  .boton {top:65%;left:60%;width: 30%;font-size: 200%;}
-}
-@media screen   and (max-height: 400px)
-{
-  .adorno, .adorno2 {left: -45%;margin-top: -20%;height: 200%;}
-  #Titulo {font-size: 600%; top: 15%;}  
-  .adorno2 {display: none;}  
-  .boton {top:65%;left:60%;width: 30%;font-size: 200%;}
-}
-@media screen   and (min-height: 700px)
-{
-  #Titulo {font-size: 500%; top: 15%;}  
-  .adorno2 {margin-top: 30%;height: 90%;}  
-  .boton {top:55%;left:45%;width: 45%;font-size: 250%;}
-}
-@media screen   and (min-height: 800px)
-{
-  #Titulo {font-size: 500%; top: 15%;}  
-  .adorno2 {top: 15%;height: 100%; margin-left: -5%;}  
-  .boton {top:55%;left:45%;width: 45%;font-size: 250%;}
+.nota2 {
+  bottom: 15%;
+  right: 20%;
+  animation-delay: 2s;
 }
 
-@media screen and (min-height: 900px)
-{
-  #Titulo {font-size: 500%; top: 15%;}  
-  .adorno2 {top: 15%;height: 100%; margin-left: -5%;}  
-  .boton {top:55%;left:45%;width: 45%;font-size: 250%;}
+.nota4 {
+  bottom: 15%;
+  right: 80%;
+  animation-delay: 2s;
 }
 
-
-@media screen   and (min-width: 360px)
-{
-  #Titulo {font-size: 600%; top: 15%;}  
-  .boton {top:55%;left:45%;width: 45%;font-size: 250%;}
+.nota5 {
+  bottom: 80%;
+  right: 15%;
+  animation-delay: 2s;
 }
 
-
-@media screen   and (min-width: 360px)
-{
-  #Titulo {font-size: 600%; top: 20%;}  
-  .adorno{ height: 90%; margin-left: -2%;}
+.nota5 {
+  bottom: 50%;
+  right: 85%;
+  animation-delay: 2s;
 }
 
-@media screen   and (min-width: 400px)
-{
-  #Titulo {font-size: 650%; top: 20%;}  
-  .adorno{ height: 100%; margin-left: -2%;}
+.nota6 {
+  bottom: 80%;
+  right: 10%;
+  animation-delay: 2s;
 }
 
+.nota3 {
+  top: 35%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .notas {
+    font-size: 2rem;
+  }
+  .adorno, .adorno2 {
+    height: 10vmax;
+    width: 10vmax;
+  }
+}

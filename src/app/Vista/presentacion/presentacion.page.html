@@ -1,21 +1,15 @@
-<ion-grid class="presentacion"><!--Contenedor-->
-  <ion-row>
-    <ion-col  size="12"><!--Adorno-->
-      <svg class="adorno" viewBox="0 0 375 224" width="1000" height="300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-70 63.5C-70 63.5 1 25.5004 188.5 109C376 192.5 405.5 116 405.5 116L376 -126H1L-70 63.5Z" fill="black" fill-opacity="0.5"/>
-        <path d="M445 111.112C445 111.112 373.925 60.3561 186.228 171.886C-1.46899 283.415 -31 181.235 -31 181.235L-1.46899 -142H373.925L445 111.112Z" fill="black" fill-opacity="0.5"/>
-      </svg>
-    </ion-col>
-    <ion-col size="14" ><!--Titulo-->
-      <h1 id="Titulo">Crescendo</h1>
-    </ion-col>
-    <ion-col size="12" ><!--Boton  (click)=metodo para ir a pagina de registro-->
-      <button class="boton" (click)=irPagina()>Empezar</button>
-    </ion-col>
-    <ion-col size="12"><!--Adorno 2-->
-      <svg class="adorno2" width="515" height="366" viewBox="0 0 515 366" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M515 160.5C515 160.5 444 198.5 256.5 115C69 31.4996 39.5 108 39.5 108L69 350L444 350L515 160.5Z" fill="black" fill-opacity="0.5"/>
-      <path d="M0 112.888C0 112.888 71.0747 163.644 258.772 52.1143C446.469 -59.4152 476 42.7651 476 42.7651L446.469 366L71.0747 366L0 112.888Z" fill="black" fill-opacity="0.5"/></svg>
-    </ion-col>
-  </ion-row>>
-</ion-grid> 
+<div class="presentacion">
+  <div class="adorno"></div>
+  <h1 id="Titulo">Crescendo</h1>
+  <button class="boton" (click)="irPagina()">Empezar<ion-icon name="arrow-forward-outline"></ion-icon> </button>
+  <div class="adorno2"></div>
+
+  <!-- Notas musicales flotantes -->
+  <div class="notas nota1">♪</div>
+  <div class="notas nota4">♪</div>
+  <div class="notas nota2">♬</div>
+  <div class="notas nota3">♫</div>
+  <div class="notas nota5">♪</div>
+  <div class="notas nota6">♪</div>
+
+</div>

@@ -11,6 +11,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HtmlTagDefinition } from '@angular/compiler';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { ImagekitioAngularModule } from 'imagekitio-angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     BrowserModule,
     IonicModule.forRoot({innerHTMLTemplatesEnabled: true}),
     AppRoutingModule,
+    ImagekitioAngularModule.forRoot({
+      publicKey: "public_2MFZoPG3dyoNnT1RznXsHzQVqQM=",
+      urlEndpoint:"https://ik.imagekit.io/storageCrescendo",
+      }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),

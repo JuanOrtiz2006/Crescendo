@@ -22,10 +22,10 @@ export class NivelPage implements OnInit {
   link:string="";//Variables para las rutas de las imagenes
   link2:string="";
   //Vectores para las rutas de las imagenes
-  notas: any[] = ["../../../assets/Imagenes/N/Do.svg", "../../../assets/Imagenes/N/Re.svg", "../../../assets/Imagenes/N/Mi.svg", "../../../assets/Imagenes/N/Fa.svg", "../../../assets/Imagenes/N/Sol.svg", "../../../assets/Imagenes/N/La.svg", "../../../assets/Imagenes/N/Si.svg"];
-  acordes: any[] = ["../../../assets/Imagenes/Do.svg", "../../../assets/Imagenes/Re.svg", "../../../assets/Imagenes/Mi.svg", "../../../assets/Imagenes/Fa.svg", "../../../assets/Imagenes/Sol.svg", "../../../assets/Imagenes/La.svg", 
-                    "../../../assets/Imagenes/Si.svg", "../../../assets/Imagenes/Dom.svg", "../../../assets/Imagenes/Rem.svg","../../../assets/Imagenes/Mim.svg", "../../../assets/Imagenes/Fam.svg", "../../../assets/Imagenes/Solm.svg",
-                    "../../../assets/Imagenes/Lam.svg", "../../../assets/Imagenes/Sim.svg"];
+  notas: any[] = ["/N/Do.svg", "/N/Re.svg", "/N/Mi.svg", "/N/Fa.svg", "/N/Sol.svg", "/N/La.svg", "/N/Si.svg"];
+  acordes: any[] = ["/Acordes/ADo.svg", "/Acordes/ARe.svg", "/Acordes/AMi.svg", "/Acordes/AFa.svg", "/Acordes/ASol.svg", "/Acordes/ALa.svg", 
+                    "/Acordes/ASi.svg", "/Acordes/ADom.svg", "/Acordes/ARem.svg","/Acordes/AMim.svg", "/Acordes/AFam.svg", "/Acordes/ASolm.svg",
+                    "/Acordes/ALam.svg", "/Acordes/ASim.svg"];
   constructor(private database:Database, private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {

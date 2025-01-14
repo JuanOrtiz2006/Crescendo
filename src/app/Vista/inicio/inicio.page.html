@@ -3,7 +3,8 @@
     <ion-grid>
       <ion-row>
         <ion-col  size-xs="3" size-sm="3" size-md="3" size-lg="3" >
-            <ion-avatar><img src="../../../assets/Imagenes/Logo.svg">
+            <ion-avatar>
+              <ik-image path="/Logo.svg" ></ik-image>
             </ion-avatar>
             <ion-label class="nombre">{{nombre}}</ion-label>
         </ion-col>
@@ -28,17 +29,17 @@
     <ion-row>
       <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img  width="100%" height="100%" (click)="irPagina('1')" src="../../../assets/Imagenes/Portadas/portada_Principiante.svg">
+          <ik-image width="100%" height="100%" (click)="irPagina('1')" path="/Portadas/portada_Principiante.svg" ></ik-image>
         </ion-card>
       </ion-col>
       <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img width="100%" height="100%" (click)="irPagina('2')" src="../../../assets/Imagenes/Portadas/portada_Intermedio.svg">
+          <ik-image width="100%" height="100%" (click)="irPagina('2')" path="/Portadas/portada_Intermedio.svg" ></ik-image>
         </ion-card>
       </ion-col>
       <ion-col class="video" size-xs="12" size-sm="4" size-md="4" size-lg="12" >
         <ion-card class="contenedor">
-          <img width="100%" height="100%" (click)="irPagina('3')" src="../../../assets/Imagenes/Portadas/portada_Experto.svg">
+          <ik-image width="100%" height="100%" (click)="irPagina('3')" path="/Portadas/portada_Experto.svg" ></ik-image>
         </ion-card>
       </ion-col>
       <ion-col size="12" >

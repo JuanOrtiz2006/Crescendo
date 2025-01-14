@@ -1,78 +1,98 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Database, object, ref, set,get } from '@angular/fire/database';
+import { Database, ref, get } from '@angular/fire/database';
 import { Storage } from '@ionic/storage-angular';
+
 @Component({
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.page.html',
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
-  messageHtml:any;
-  uid: string | null = null; // Cambiado a tipo string o null
-  nombre: string = ''; // Cambiado a tipo string
-  message:string="";
-  private routeSub: any; // Variable para manejar la suscripción a la ruta
-  acordes=['../../../assets/Imagenes/Do.svg', 
-          '../../../assets/Imagenes/Re.svg', 
-          '../../../assets/Imagenes/Mi.svg', 
-          '../../../assets/Imagenes/Fa.svg', 
-          '../../../assets/Imagenes/Sol.svg', 
-          '../../../assets/Imagenes/La.svg', 
-          '../../../assets/Imagenes/Si.svg'];
-  acordesM=['../../../assets/Imagenes/Dom.svg', 
-            '../../../assets/Imagenes/Rem.svg', 
-            '../../../assets/Imagenes/Mim.svg', 
-            '../../../assets/Imagenes/Fam.svg', 
-            '../../../assets/Imagenes/Solm.svg', 
-            '../../../assets/Imagenes/Lam.svg', 
-            '../../../assets/Imagenes/Sim.svg'];
-  constructor(private database:Database, private router: Router, private route: ActivatedRoute, private alertController:AlertController, private storage:Storage) {}
+  uid: string | null = null;
+  nombre: string = '';
+  acordes = [
+    '/Acordes/ADo.svg',
+    '/Acordes/ARe.svg',
+    '/Acordes/AMi.svg',
+    '/Acordes/AFa.svg',
+    '/Acordes/ASol.svg',
+    '/Acordes/ALa.svg',
+    '/Acordes/ASi.svg',
+  ];
+  acordesM = [
+    '/Acordes/ADom.svg',
+    '/Acordes/ARem.svg',
+    '/Acordes/AMim.svg',
+    '/Acordes/AFam.svg',
+    '/Acordes/ASolm.svg',
+    '/Acordes/ALam.svg',
+    '/Acordes/ASim.svg',
+  ];
+
+  constructor(
+    private database: Database,
+    private router: Router,
+    private alertController: AlertController,
+    private storage: Storage
+  ) {}
+
   async ngOnInit() {
-    this.uid= await this.storage.get("id");
-    // Usa el uid para leer el nombre del usuario de la base de datos
-    const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
-    
-    const snapshot = await get(userRef);
-    if (snapshot.exists()) {
-      // Almacena el nombre en la variable 'nombre'
-      this.nombre = snapshot.val();
-      await this.storage.set("usuario:",this.nombre);
-      const name = this.storage.get("usuario");
-      this.message = `Got value ${name}`;
-      console.log(this.message);
-    } else {
-      console.log('No se encontró el nombre del usuario');
+    this.uid = await this.storage.get('id');
+    if (this.uid) {
+      const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
+      const snapshot = await get(userRef);
+      if (snapshot.exists()) {
+        this.nombre = snapshot.val();
+      } else {
+        console.log('No se encontró el nombre del usuario.');
+      }
     }
   }
 
-  // Función para navegar a la página de inicio
   irinicio() {
-    // Asegúrate de pasar `uid` y `nombre` como parámetros si es necesario
-    this.router.navigate(['../inicio']);
+    // Redirige a la página de inicio directamente sin animación
+    this.router.navigate(['../inicio'], { skipLocationChange: true });
   }
-  async presentAlert(dato: number) {
-    if(dato==1)
-      {
-        this.messageHtml = this.acordes.map((acorde) => `<swiper-slide><img src="${acorde}"></swiper-slide>`);
-        const alert = await this.alertController.create({
-        message: `<swiper-container>${this.messageHtml}</swiper-container>`,});
-        await alert.present();
-      }
-    if(dato==2)
-      {
-        const messageHtml = this.acordesM
-        .map((acordem) => `<swiper-slide><img src="${acordem}"></swiper-slide>`)
-        .join('');
-        const alert = await this.alertController.create({
-        message: `<swiper-container>${messageHtml}</swiper-container>`,});
-        await alert.present();
-      }
-    if(dato==3)
-      {
-      }
 
-      console.log(this.messageHtml);
+  async presentAlert(dato: number) {
+    let acordesSeleccionados: string[] = [];
+    let titulo = '';
+
+    if (dato === 1) {
+      acordesSeleccionados = this.acordes;
+      titulo = 'Acordes Mayores';
+    } else if (dato === 2) {
+      acordesSeleccionados = this.acordesM;
+      titulo = 'Acordes Menores';
+    } else {
+      acordesSeleccionados = [];
+      titulo = 'Escalas'; // Para el dato 3
+    }
+
+    const slides = acordesSeleccionados
+      .map(
+        (acorde) => `
+      <swiper-slide>
+        <ion-card class="slide-card">
+          <ion-img src="https://ik.imagekit.io/storageCrescendo${acorde}" alt="Acorde"></ion-img>
+        </ion-card>
+      </swiper-slide>
+    `
+      )
+      .join('');
+
+    const alert = await this.alertController.create({
+      header: titulo,
+      cssClass: 'custom-alert',
+      message: `
+      <swiper-container slides-per-view="1.2" space-between="10">
+        ${slides}
+      </swiper-container>
+    `,
+    });
+
+    await alert.present();
   }
 }
