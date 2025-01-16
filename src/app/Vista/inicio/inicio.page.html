@@ -1,19 +1,19 @@
 <ion-menu contentId="main-content">
   <ion-header>
-    <ion-toolbar color="tertiary" >
+    <ion-toolbar color="tertiary">
       <ion-title><ion-icon name="person-outline"></ion-icon>User</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-list class="ion-padding">
-      <ion-item>
-        <ion-label><ion-icon name="cog-outline"></ion-icon>Configuración</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label><ion-icon name="document-text-outline"></ion-icon>Inf.Usuario</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label><ion-icon name="lock-closed-outline"></ion-icon>Cerrar sesion</ion-label>
-      </ion-item>
+    <ion-item>
+      <ion-label><ion-icon name="cog-outline"></ion-icon>Configuración</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon name="document-text-outline"></ion-icon>Inf.Usuario</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon name="lock-closed-outline"></ion-icon>Cerrar sesión</ion-label>
+    </ion-item>
   </ion-list>
 </ion-menu>
 
@@ -33,18 +33,34 @@
       </ion-segment>
     </ion-toolbar>
   </ion-header>
-  <!-- Niveles content -->
-  <ion-content class="ion-padding" *ngIf="segmentValue === 'Niveles'">
-    <ion-card class="contenedor" *ngFor="let img of nivel; let i = index">
-      <ik-image (click)="irPagina(i + 1)" [path]="img"></ik-image>
-    </ion-card>
-  </ion-content>
 
-  <!-- Biblioteca content -->
-  <ion-content class="ion-padding" *ngIf="segmentValue === 'Biblioteca'">
-    <ion-card class="contenedor" *ngFor="let img of portada; let i = index">
-      <ik-image (click)="presentAlert(i + 1)" [path]="img"></ik-image>
-    </ion-card>
+  <!-- Mostrar las portadas según el valor de segmentValue -->
+  <ion-content class="ion-padding">
+    <!-- Contenido de Niveles -->
+    <div *ngIf="segmentValue === 'Niveles'">
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('1')" [path]="portadas[0]"></ik-image>
+      </ion-card>
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('2')" [path]="portadas[1]"></ik-image>
+      </ion-card>
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('3')" [path]="portadas[2]"></ik-image>
+      </ion-card>
+    </div>
+
+    <!-- Contenido de Biblioteca -->
+    <div *ngIf="segmentValue === 'Biblioteca'">
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('4')" [path]="portadas[3]"></ik-image>
+      </ion-card>
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('5')" [path]="portadas[4]"></ik-image>
+      </ion-card>
+      <ion-card class="contenedor">
+        <ik-image (click)="Accion('6')" [path]="portadas[5]"></ik-image>
+      </ion-card>
+    </div>
   </ion-content>
 
   <div class="notas nota1">♪</div>
@@ -53,6 +69,4 @@
   <div class="notas nota3">♫</div>
   <div class="notas nota5">♪</div>
   <div class="notas nota6">♪</div>
-
 </div>
-

@@ -1,8 +1,45 @@
+/*
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'; // Importación de librerías de enrutamiento
+import { Database, ref, get, set } from '@angular/fire/database'; // Importación de librerías de Firebase para la lectura y escritura de datos
+import { Storage } from '@ionic/storage-angular'; // Importación de librería para el localStorage
+import { NavController } from '@ionic/angular'; // Importación de NavController
+
+@Component({
+  selector: 'app-inicio',
+  templateUrl: './inicio.page.html',
+  styleUrls: ['./inicio.page.scss'],
+})
+export class InicioPage implements OnInit {
+  
+  
+
+  constructor(
+    private database: Database,
+    private router: Router,
+    private route: ActivatedRoute,
+    private storage: Storage,
+    private navCtrl: NavController // NavController para navegación sin animaciones
+  ) {}
+
+
+  // Navegación sin animación
+  irPagina(encender: string) {
+    this.navCtrl.navigateForward(['../nivel', { encender }]); // Navega sin animación
+  }
+
+  irPagina2(pagina: string) {
+    this.navCtrl.navigateForward(['../biblioteca']); // Navega sin animación
+  }
+}
+
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Database, ref, get, set } from '@angular/fire/database';
 import { Storage } from '@ionic/storage-angular';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular'; // Importación de NavController
 
 @Component({
   selector: 'app-inicio',
@@ -14,26 +51,26 @@ export class InicioPage implements OnInit {
   nombre: string = '';
   message: string = '';
   segmentValue: string = 'Niveles'; // Valor inicial del segmento
-
-  nivel = [
+  rout: any;
+  reset: any;
+  isActionSheetOpen = false;
+  
+  portadas = [
     "/Portadas/portada_Principiante.svg",
     "/Portadas/portada_Intermedio.svg",
-    "/Portadas/portada_Experto.svg"
-  ];
-
-  portada = [
+    "/Portadas/portada_Experto.svg",
     "/Portadas/BiblioMayores.svg",
     "/Portadas/BiblioMenores.svg",
     "/Portadas/escalas.svg"
   ];
 
   acordes = [
-    '/Acordes/ADo.svg', '/Acordes/ARe.svg', '/Acordes/AMi.svg', 
+    '/Acordes/ADo.svg', '/Acordes/ARe.svg', '/Acordes/AMi.svg',
     '/Acordes/AFa.svg', '/Acordes/ASol.svg', '/Acordes/ALa.svg', '/Acordes/ASi.svg'
   ];
 
   acordesM = [
-    '/Acordes/ADom.svg', '/Acordes/ARem.svg', '/Acordes/AMim.svg', 
+    '/Acordes/ADom.svg', '/Acordes/ARem.svg', '/Acordes/AMim.svg',
     '/Acordes/AFam.svg', '/Acordes/ASolm.svg', '/Acordes/ALam.svg', '/Acordes/ASim.svg'
   ];
 
@@ -41,14 +78,16 @@ export class InicioPage implements OnInit {
     private database: Database,
     private router: Router,
     private storage: Storage,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private navCtrl: NavController // NavController para navegación sin animaciones
+
   ) {}
 
   async ngOnInit() {
     this.uid = await this.storage.get('id');
     const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
     const snapshot = await get(userRef);
-    
+
     if (snapshot.exists()) {
       this.nombre = snapshot.val();
       await this.storage.set('usuario', this.nombre);
@@ -61,12 +100,35 @@ export class InicioPage implements OnInit {
     this.segmentValue = event.detail.value;
   }
 
-  getImagenes(): string[] {
-    return this.segmentValue === 'Niveles' ? this.nivel : this.portada;
+  getPortadas(): string[] {
+    if (this.segmentValue === 'Niveles') {
+      return this.portadas.slice(0, 3);
+    } else if (this.segmentValue === 'Biblioteca') {
+      return this.portadas.slice(3);
+    }
+    return [];
   }
 
+  // Función para realizar la acción según el clic en el card
+  Accion(encender: string) {
+    if (encender === "1") {
+      this.navCtrl.navigateForward(['../nivel', { encender }]);
+    } else if (encender === "2") {
+      this.navCtrl.navigateForward(['../nivel', { encender }]);
+    } else if (encender === "3") {
+      this.navCtrl.navigateForward(['../nivel', { encender }]);
+    } else if (encender === "4") {
+      this.presentAlert(1);  // Mostrar Acordes Mayores
+    } else if (encender === "5") {
+      this.presentAlert(2);  // Mostrar Acordes Menores
+    } else if (encender === "6") {
+      this.presentAlert(3);  // Mostrar Escalas
+    }
+  }
+
+  // Función para mostrar el alert con los acordes y escalas
   async presentAlert(dato: number) {
-    const acordesSeleccionados = this.getAcordes(dato);
+    const acordesSeleccionados = dato === 1 ? this.acordes : dato === 2 ? this.acordesM : [];
     const titulo = dato === 1 ? 'Acordes Mayores' : dato === 2 ? 'Acordes Menores' : 'Escalas';
 
     const slides = acordesSeleccionados
@@ -86,18 +148,5 @@ export class InicioPage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  private getAcordes(dato: number): string[] {
-    if (dato === 1) return this.acordes;
-    if (dato === 2) return this.acordesM;
-    return [];
-  }
-
-  irPagina(i: number) {
-    const rutas = ['../nivel1', '../nivel2', '../nivel3'];
-    if (i >= 1 && i <= 3) {
-      this.router.navigate([rutas[i - 1]]);
-    }
   }
 }
