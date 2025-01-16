@@ -2,8 +2,21 @@
   <ion-header>
     <ion-toolbar color="tertiary">
       <ion-title>
-        <ion-icon name="person-outline"></ion-icon>
-        {{ nombre }} - {{ correo }}
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <ion-icon name="person-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="10">
+              <ion-row>
+                {{ nombre }}
+              </ion-row>
+              <ion-row>
+                {{ correo }}
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-title>
     </ion-toolbar>
     <ion-list class="ion-padding">

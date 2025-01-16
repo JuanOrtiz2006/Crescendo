@@ -100,3 +100,8 @@ ion-segment-button {
   --color-checked: #800080; /* Color morado */
   --indicator-color: #800080; /* Color morado */
 }
+
+// Aplicar la fuente a los elementos de texto
+ion-title, ion-label, ion-label, ion-row {
+  font-family: 'Dancing Script', cursive;
+}
