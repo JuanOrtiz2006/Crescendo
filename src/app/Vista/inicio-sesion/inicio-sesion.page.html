@@ -1,4 +1,3 @@
-
 <div class="registro-de-usuario">
   <div class="adorno"></div>
   <div class="adorno2"></div>
@@ -6,8 +5,16 @@
   <ion-card class="login-box">
     <form #formulario="ngForm">
       <ion-card-header>
-        <a class="texto" (click)="regreso()">Regresar</a>
-        <ion-card-title>Registro usuario</ion-card-title>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4" class="align-left">
+              <b class="texto" (click)="regreso()">Regresar</b>
+            </ion-col>
+            <ion-col size="12" class="align-right">
+              <ion-card-title>Registro usuario</ion-card-title>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-header>
     
       <ion-card-content>

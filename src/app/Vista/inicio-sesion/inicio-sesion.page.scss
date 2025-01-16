@@ -48,10 +48,18 @@ img {
 .texto {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(1rem, 3vw, 6rem);
+  margin: 1rem;
 
 }
 
-ion-input, ion-card-title{
+ion-card-title{
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 6rem);
+
+
+}
+ion-input{
   margin: 1rem;
   margin-bottom: 1.5rem;
   font-family: 'Dancing Script', cursive;
@@ -126,6 +134,14 @@ ion-button{
   top: 35%;
   right: 10%;
   animation-delay: 4s;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
 @keyframes fadeIn {
