@@ -54,6 +54,7 @@ export class InicioPage implements OnInit {
   rout: any;
   reset: any;
   isActionSheetOpen = false;
+  correo: string = '';
   
   portadas = [
     "/Portadas/portada_Principiante.svg",
@@ -85,14 +86,25 @@ export class InicioPage implements OnInit {
 
   async ngOnInit() {
     this.uid = await this.storage.get('id');
-    const userRef = ref(this.database, `Usuarios/${this.uid}/nombre`);
-    const snapshot = await get(userRef);
+    await this.obtenerDatosUsuario(this.uid);
+  }
 
-    if (snapshot.exists()) {
-      this.nombre = snapshot.val();
-      await this.storage.set('usuario', this.nombre);
+  async obtenerDatosUsuario(uid: string | null) {
+    if (uid) {
+      const userRef = ref(this.database, `Usuarios/${uid}`);
+      const snapshot = await get(userRef);
+
+      if (snapshot.exists()) {
+        const userData = snapshot.val();
+        this.nombre = userData.nombre;
+        this.correo = userData.correo;
+        await this.storage.set('usuario', this.nombre);
+        await this.storage.set('correo', this.correo);
+      } else {
+        console.error('No se encontraron los datos del usuario');
+      }
     } else {
-      console.error('No se encontró el nombre del usuario');
+      console.error('UID no encontrado en el local storage');
     }
   }
 

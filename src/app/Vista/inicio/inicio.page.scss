@@ -4,11 +4,12 @@
 ion-card{
   width: 70%;
   margin: 1rem;
-  margin-left: 6rem;
+  margin-left: 8rem;
+  margin-right: 7rem;
 }
 
 ion-menu::part(backdrop) {
-  background-color: rgba(255, 0, 255, 0.5);
+  background-color: rgba(255, 0, 255, 0.616);
 }
 
 ion-menu::part(container) {
@@ -68,8 +69,6 @@ ion-icon{
   right: 90%;
   animation-delay: 2s;
 }
-
-
 
 .nota5 {
   bottom: 50%;

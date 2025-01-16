@@ -21,10 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./Vista/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'biblioteca',
-    loadChildren: () => import('./Vista/biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
-  },
-  {
     path: 'nivel',
     loadChildren: () => import('./Vista/nivel/nivel.module').then( m => m.NivelPageModule)
   },
