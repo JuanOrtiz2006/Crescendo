@@ -1,151 +1,159 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&family=Bree+Serif&family=Caveat:wght@400..700&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sedan:ital@0;1&family=Yellowtail&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amatic+SC:wght@400;700&family=Bree+Serif&family=Caveat:wght@400..700&family=Kalam&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Satisfy&family=Sedan:ital@0;1&family=Yellowtail&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Briem+Hand:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poetsen+One&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(135deg, #3a3d40, #1c1c1e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .registro-de-usuario {
-  background: #ffffff;
-  position: absolute;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
   height: 100%;
   width: 100%;
-}
-.adorno {
-  position:relative;
-  overflow: visible;
-  margin-top: -20%;
-  width: auto;
-  height: 120%;
+  overflow: hidden;
 }
 img {
-  margin-top: -15%;
-  margin-left: 31%;
-  margin-bottom: 10%;
-  width: 35%;
-  height: 85%;
+  margin-top: -5rem;
+  margin-left: 1rem;
+  margin-bottom: 5rem;
+  height: 15%;
   border-radius: 100%;
   background: #ffffff;
-  box-shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.65);
 }
-.texto{
-  position: fixed;
-  font-size: 100%;
-  top:5%;
-  left: 5%;
+
+.adorno {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  height: 15vmax;
+  width: 15vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.5;
+}
+.texto {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 6rem);
+
+}
+
+ion-input, ion-card-title{
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1rem, 3vw, 6rem);
+
+
+}
+ion-button{
+  --background: #f77f00;
+  font-family: 'Dancing Script', cursive;
+  --letter-spacing: 1px;
+  padding: 1rem 2rem;
+  --border-radius: 50px;
+  cursor: pointer;
   
 }
-.login-box {//Carta
-  position: relative;
-  margin-top: 30%; 
-  margin-left: 50%;
-  width: 90%;
-  padding: 50px;
-  transform: translate(-50%, -50%);
-  background: rgba(35, 32, 32, 0.942);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-}
-.login-box .user-box {
-  position: relative;
-}
-.login-box .user-box input {
-  width: 100%;
-  padding: 7px;//Paddin de las lineas de registro
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-.login-box .user-box label {
+.adorno2 {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1%;
-  font-family: "Satisfy";
-  font-size: 150%;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
+  bottom: 10%;
+  left: 10%;
+  height: 20vmax;
+  width: 20vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
 }
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {//Transicion de inputs
-  top: -10px;
-  left: 0;
-  color: #bdb8b8;
-  font-size: 100%;
-}
-.login-box form a {//Boton de iniciiar
-  position: relative;
-  display: inline-block;
-  color: #ffffff;
-  font-family: "Satisfy"  ;
-  font-size: 200%;
-  text-decoration: none;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 1%;
-  letter-spacing: 4px;
-}
-.login-box a:hover {
-  background: #dedede;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #dedede,
-              0 0 25px #dedede,
-              0 0 50px #dedede,
-              0 0 100px #dedede;
-}
-.login-box a span {
+
+.notas {
   position: absolute;
-  display: block;
-}
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%, 100% {
-    left: 100%;
-  }
-}
-.login-box a span:nth-child(1) {//Linea en movimiento
-  bottom: 2px;
-  left: -100%;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #ffffff);
-  animation: btn-anim1 2s linear infinite;
+  font-size: clamp(2rem, 4vw, 4rem);
+  color: rgba(255, 255, 255, 0.2);
+  animation: flotar 6s ease-in-out infinite;
+  z-index: 1;
 }
 
-@media screen and (max-height: 400px) {
-  img {display: none;}
-  .login-box {top: -40%;}
-  .login-box form a {margin: -5%;margin-left: 5%;}
-}
-@media screen and (max-height: 500px) {
-  .login-box {top: -30%;}
-  .login-box form a {margin: -5%;margin-left: 5%;}
+.nota1 {
+  top: 20%;
+  left: 15%;
 }
 
-@media screen and (max-height: 500px) {
-  img {display: none;}
-  .login-box {margin-top: -10%;}
-  .login-box form a {margin: -5%;margin-left: 5%;}
+.nota2 {
+  bottom: 15%;
+  right: 20%;
+  animation-delay: 2s;
 }
 
-@media screen and (min-height: 700px) {
-  .adorno{
-    margin-top: -10%;
+.nota4 {
+  bottom: 15%;
+  right: 80%;
+  animation-delay: 2s;
+}
+
+.nota5 {
+  bottom: 80%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.nota5 {
+  bottom: 50%;
+  right: 85%;
+  animation-delay: 2s;
+}
+
+.nota6 {
+  bottom: 80%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.nota3 {
+  top: 35%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media screen and (min-height: 800px) {
-  .adorno2{
-    top: 10%;    
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
-@media screen and (min-height: 900px) {
-  .adorno{
-    margin-top: 0%;
+
+@media (max-width: 768px) {
+  .notas {
+    font-size: 2rem;
+  }
+  .adorno, .adorno2 {
+    height: 10vmax;
+    width: 10vmax;
   }
 }
