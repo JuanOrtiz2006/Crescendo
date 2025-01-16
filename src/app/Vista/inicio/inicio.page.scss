@@ -1,137 +1,87 @@
-$primary: #ffffff;
-ion-content, ion-header {
-  --background: $primary;
-}
-.inicio {
-  background: $primary;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.header
-{
-  background: #1d1c1c;
-  box-shadow: 60px rgba(0, 0, 0, 0.804);
-  border-radius: 0px 0px 15px 15px;
-  width: 100%;
-  padding: 0%;
-  margin: 0%;
-  height: 13%;
-}
-ion-avatar{
-  width: 70%;
-  height: 70%;
-  background-color: #EEE; 
-  margin-left: 5%; 
-  margin-top: 5%;
-}
-.nombre{
-  font-size: 70%;  
-  position: fixed; 
-  margin-top: 0.5%; 
-  margin-left: -2%;
-}
-.opciones{
-  position: relative;
-  left: -12%;
-  border-radius: 100px;
-}
-.radio-inputs {
-  position: relative;
-  display: flex;
-  background-color: #EEE;
-  box-sizing: border-box;
-  padding: 6%;
-  width: 100%;
-}
-.radio-inputs .radio {
-  flex: 1 1 auto;
-  text-align: center;
-}
-.radio-inputs .radio input {
-  display: none;
-}
-.radio-inputs .radio .name {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  border: none;
-  padding: 5%;
-}
-.radio-inputs .radio input:checked + .name {
-  background-color: #333;
-  font-weight: 600;
-}
-.adorno2 {
-  display: none;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
 
-  
-//===========================================================RESPONSIVE===========================================
-@media screen   and (min-height: 200px)
-{
-  .header{ padding: 5%;}
-  ion-avatar{ width: 50%; height: 100%; margin-left: -5%; margin-top: -25%;}
-  .radio-inputs {padding: 1%;}
-  .opciones{margin-top: -8%;}
-  .contenedor { z-index: 1;margin-top: 10%; margin-left: 0%; width: 100%; height: 80%;}
+
+ion-card{
+  width: 70%;
+  margin: 1rem;
+  margin-left: 6rem;
 }
-@media screen   and (min-height: 250px)
-{
-  .contenedor {margin-top: 20%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -25%; margin-left: -12%; width: 122%; height: 200%; }
+
+ion-menu::part(backdrop) {
+  background-color: rgba(255, 0, 255, 0.5);
 }
-@media screen   and (min-height: 300px)
-{
-  .header{ padding: 6%;}
-  .contenedor {margin-top: 20%; height: 90%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -30%;}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
 }
-@media screen   and (min-height: 400px)
-{
-  .header{ padding: 7%;}
-  ion-avatar{ width: 60%; margin-left: -10%; margin-top: -30%;}
-  .radio-inputs {padding: 3%;}
-  .opciones{margin-top: -10%;}
-  .contenedor { margin-top: 25%; height: 100%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -35%;}
+
+
+
+.adorno {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  height: 15vmax;
+  width: 15vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.5;
 }
-@media screen   and (min-height: 500px)
-{
-  img{ width: 100% ; height: 100%;}
-  .contenedor {width: 85%; margin-top: -0%; margin-left: 8%; height: 90%;}
+
+.adorno2 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  height: 20vmax;
+  width: 20vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  z-index: 0;
 }
-@media screen   and (min-height: 600px)
-{
-  .header{ padding: 5%;}
-  ion-avatar{ width: 90%; margin-top: -25%;}
-  .radio-inputs {padding: 4%;}
-  .opciones{margin-top: -4%;}
-  .contenedor{margin-top: 5%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
+
+.notas {
+  position: absolute;
+  font-size: clamp(2rem, 4vw, 4rem);
+  animation: flotar 6s ease-in-out infinite;
+  z-index: 1;
 }
-@media screen   and (min-height: 630px) and (min-width: 350px)
-{
-  .contenedor{margin-top: 3%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
+
+.nota1 {
+  top: 20%;
+  left: 10%;
 }
-@media screen   and (min-height: 700px)
-{
-  .header{ padding: 5%;}
-  ion-avatar{ width: 95%; margin-top: -18%; margin-left: -25%;}
-  .radio-inputs {padding: 4%;}
-  .opciones{margin-top: 0%;}
-  .contenedor{margin-top: 7%;}
-  .adorno2{ display:flex; position:fixed; margin-top: -55%; margin-left: -30%; width: 155%; height: 52%; }
+
+.nota2 {
+  bottom: 15%;
+  right: 5%;
+  animation-delay: 2s;
 }
-@media screen   and (min-height: 800px)
-{
-  .contenedor {width: 85%; margin-top: 6%; margin-left: 8%; height: 100%; z-index: 1;}
+
+.nota4 {
+  bottom: 15%;
+  right: 90%;
+  animation-delay: 2s;
 }
-@media screen   and (min-height: 900px)
-{
-  .contenedor {width: 95%; margin-left: 3%; }
-  .adorno2{ display:flex; position:fixed; margin-top: -50%; margin-left: -27%; width: 150%; height: 45%; }
+
+
+
+.nota5 {
+  bottom: 50%;
+  right: 86%;
+  animation-delay: 2s;
+}
+
+.nota6 {
+  bottom: 80%;
+  right: 4%;
+  animation-delay: 2s;
+}
+
+.nota3 {
+  top: 35%;
+  right: 7%;
+  animation-delay: 4s;
 }

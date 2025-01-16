@@ -1,6 +1,6 @@
 <ion-menu contentId="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="tertiary" >
       <ion-title>Menu Content</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -23,7 +23,6 @@
       </ion-segment>
     </ion-toolbar>
   </ion-header>
-
   <!-- Niveles content -->
   <ion-content class="ion-padding" *ngIf="segmentValue === 'Niveles'">
     <ion-card class="contenedor" *ngFor="let img of nivel; let i = index">
@@ -37,6 +36,13 @@
       <ik-image (click)="presentAlert(i + 1)" [path]="img"></ik-image>
     </ion-card>
   </ion-content>
+
+  <div class="notas nota1">♪</div>
+  <div class="notas nota4">♪</div>
+  <div class="notas nota2">♬</div>
+  <div class="notas nota3">♫</div>
+  <div class="notas nota5">♪</div>
+  <div class="notas nota6">♪</div>
 
 </div>
 
