@@ -1,31 +1,36 @@
-<ion-grid class="registro-de-usuario">
-  <ion-row>
-    <svg class="adorno" viewBox="0 0 375 226" fill="none" xmlns="http://www.w3.org/2000/svg"> <!--Adorno Superior-->
-      <path d="M-70 65.5C-70 65.5 1 27.5004 188.5 111C376 194.5 405.5 118 405.5 118L376 -124H1L-70 65.5Z" fill="black" fill-opacity="0.5"/>
-      <path d="M445 113.112C445 113.112 373.925 62.3561 186.228 173.886C-1.46899 285.415 -31 183.235 -31 183.235L-1.46899 -140H373.925L445 113.112Z" fill="black" fill-opacity="0.5"/>
-    </svg>
-    <ion-col size="12">    <!--Imagen Usuario-->
-        <img src="../../../assets/Imagenes/Logo.svg"/>
-    </ion-col>
-    <ion-col size="12">  <!--Carta de Registro-->
-      <ion-card class="login-box">
-        <form #formulario="ngForm">
-          <div class="user-box">
-            <input type="text" name="nombre" required="" ngModel>
-            <label>Nombre</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="correo" required="" ngModel>
-            <label>Mail</label>
-          </div>
-          <div class="user-box">
-            <input type="password" name="clave" required="" ngModel>
-            <label>Password</label>
-          </div>
-          <a (click)="registrarUsuario(formulario)"> Registrarse <span></span></a>
-          <a (click)="ruta()">Iniciar sesion </a>
-        </form>
-      </ion-card> 
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<div class="registro-de-usuario">
+  <div class="adorno"></div>
+  <div class="adorno2"></div>
+  <!--Imagen Usuario-->
+  <img src="../../../assets/Imagenes/Logo.svg"/>
+  <ion-card class="login-box">
+    <form #formulario="ngForm">
+      <ion-card-header>
+        <ion-card-title>Registro usuario</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-input type="text" name="nombre" required="" ngModel label="Nombre: "> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" name="correo" required="" ngModel label="Correo: "></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" name="clave" required="" ngModel label="Password"></ion-input>
+          </ion-item>
+        </ion-list>
+      <ion-button (click)="registrarUsuario(formulario)">Registrarse</ion-button>
+      <ion-button (click)="ruta()"> Iniciar sesion </ion-button>
+      </ion-card-content>
+    </form>
+  </ion-card>
+
+  <div class="notas nota1">♪</div>
+  <div class="notas nota4">♪</div>
+  <div class="notas nota2">♬</div>
+  <div class="notas nota3">♫</div>
+  <div class="notas nota5">♪</div>
+  <div class="notas nota6">♪</div>
+</div>
