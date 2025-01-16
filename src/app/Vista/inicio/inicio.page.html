@@ -20,16 +20,16 @@
       </ion-title>
     </ion-toolbar>
     <ion-list class="ion-padding">
-      <ion-item>
+      <ion-item button>
         <ion-label><ion-icon name="cog-outline"></ion-icon>Configuración</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-label><ion-icon name="document-text-outline"></ion-icon>Inf.Usuario</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-label><ion-icon name="wifi-outline"></ion-icon>Conexion Piano</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button (click)="cerrarSesion()">
         <ion-label><ion-icon name="lock-closed-outline"></ion-icon>Cerrar sesión</ion-label>
       </ion-item>
     </ion-list>

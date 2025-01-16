@@ -15,4 +15,7 @@ export class AutenticacionService {
   iniciarSesion(email: string, contraseña: string){
     return signInWithEmailAndPassword(this.auth,email, contraseña )
   }
+  async cerrarSesion() {
+    return await this.auth.signOut();
+  }
 }

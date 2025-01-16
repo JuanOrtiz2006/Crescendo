@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Database, ref, get, set } from '@angular/fire/database';
 import { Storage } from '@ionic/storage-angular';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular'; // Importación de NavController
+import { AutenticacionService } from 'src/app/Servicio/autenticacion.service'; // Importación del servicio de autenticación
 
 @Component({
   selector: 'app-inicio',
@@ -44,9 +45,17 @@ export class InicioPage implements OnInit {
     private router: Router,
     private storage: Storage,
     private alertController: AlertController,
-    private navCtrl: NavController // NavController para navegación sin animaciones
-
-  ) {}
+    private navCtrl: NavController, // NavController para navegación sin animaciones
+    private autenticacionService: AutenticacionService // Servicio de autenticación
+  ) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/inicio') {
+          this.actualizarNotas();
+        }
+      }
+    });
+  }
 
   async ngOnInit() {
     this.uid = await this.storage.get('id');
@@ -124,5 +133,17 @@ export class InicioPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  // Función para cerrar sesión y redirigir a la página de presentación
+  async cerrarSesion() {
+    await this.autenticacionService.cerrarSesion();
+    await this.storage.clear();
+    this.navCtrl.navigateRoot('/presentacion');
+  }
+
+  // Función para actualizar la variable notas en la base de datos
+  async actualizarNotas() {
+    await set(ref(this.database, 'Notas'), 99);
   }
 }
