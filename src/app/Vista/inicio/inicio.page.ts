@@ -115,7 +115,7 @@ export class InicioPage implements OnInit {
   async presentAlert(dato: number) {
     const acordesSeleccionados = dato === 1 ? this.acordes : dato === 2 ? this.acordesM : [];
     const titulo = dato === 1 ? 'Acordes Mayores' : dato === 2 ? 'Acordes Menores' : 'Escalas';
-
+    
     const slides = acordesSeleccionados
       .map(acorde => `
         <swiper-slide>
@@ -125,7 +125,6 @@ export class InicioPage implements OnInit {
         </swiper-slide>
       `)
       .join('');
-
     const alert = await this.alertController.create({
       header: titulo,
       cssClass: 'custom-alert',
@@ -146,4 +145,16 @@ export class InicioPage implements OnInit {
   async actualizarNotas() {
     await set(ref(this.database, 'Notas'), 99);
   }
+
+  // Función para mostrar alerta de conexión
+  async mostrarConexionAlerta() {
+    const alert = await this.alertController.create({
+      header: 'Conexión',
+      message: 'Conexión Piano',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+  
 }
