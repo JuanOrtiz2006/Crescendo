@@ -1,50 +1,68 @@
 <ion-label class="texto" (click)="irPagina(0)">Regresar</ion-label>
-
-<ion-content *ngIf="pagina == 1">
-  <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link" ></ik-image></swiper-slide>
-    </swiper-container>
+<ion-content class="block">
+  <ion-label>
+    <ion-card id="alert">
+      <ion-card-content>
+        <ion-label>Por favor gire la pantalla</ion-label>
+        <div class="notas nota1">♪</div>
+        <div class="notas nota4">♪</div>
+        <div class="notas nota2">♬</div>
+        <div class="notas nota3">♫</div>
+        <div class="notas nota5">♪</div>
+        <div class="notas nota6">♪</div>
+      </ion-card-content>
+    </ion-card>
+  </ion-label>
 </ion-content>
 
-<ion-content *ngIf="pagina == 2">
-  <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-    <swiper-slide><ik-image [path]="link2" ></ik-image></swiper-slide>
-  </swiper-container>
-</ion-content>
-
-<ion-content *ngIf="pagina == 3">
-  <ion-content *ngIf="nivel == 0">
-    <ion-card (click)="nivel=1">Acompañamiento</ion-card>
-      <ion-card (click)="nivel=2">Melodia</ion-card>
-  </ion-content>
-  <ion-content *ngIf="nivel == 1">
+<ion-content class="niveles">
+  <ion-content *ngIf="pagina == 1">
     <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
-      <swiper-slide><ik-video path="/Vid/himno" ></ik-video></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link"></ik-image></swiper-slide>
     </swiper-container>
   </ion-content>
-  <ion-content *ngIf="nivel == 2">
+  
+  <ion-content *ngIf="pagina == 2">
     <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
-      <swiper-slide><video id="video" src="../../../assets/Imagenes/himno.mp4" width="90%" height="100%" autoplay playsinline ></video></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
+      <swiper-slide><ik-image [path]="link2"></ik-image></swiper-slide>
     </swiper-container>
+  </ion-content>
+  
+  <ion-content *ngIf="pagina == 3">
+    <ion-content *ngIf="nivel == 0">
+      <ion-card class="opcion" (click)="nivel=1">Acompañamiento</ion-card>
+      <ion-card class="opcion" (click)="nivel=2">Melodia</ion-card>
+    </ion-content>
+    <ion-content *ngIf="nivel == 1">
+      <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
+        <swiper-slide><ik-video path="/Vid/himno"></ik-video></swiper-slide>
+      </swiper-container>
+    </ion-content>
+    <ion-content *ngIf="nivel == 2">
+      <swiper-container (swiperslidechange)="onSlideChange($event)" loop="true">
+        <swiper-slide><video id="video" src="../../../assets/Imagenes/himno.mp4" width="90%" height="100%" autoplay playsinline></video></swiper-slide>
+      </swiper-container>
+    </ion-content>
   </ion-content>
 </ion-content>
+
 

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
+
+.niveles {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+ion-content {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-container {
+  margin-top: 1rem;
+  width: 70%;
+}
+
+@media (max-height: 600px) {
+  .niveles {
+    display: block;
+  }
+  .block {
+    display: none;
+  }
+}
+
+// Aplicar la fuente a los elementos de texto
+ion-title, ion-label, ion-card-title, ion-item, ion-button {
+  font-family: 'Dancing Script', cursive;
+}
+
+#alert{
+  text-align: center;
+  margin-top: 3rem;
+  padding: 5rem;
+  height: 30%;
+}
+.opcion{
+  text-align: center;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 3rem;
+  padding: 4rem;
+  height: 30%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
+
+.niveles {
+  display: none;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-content {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-container {
+  margin-top: 1rem;
+  width: 70%;
+}
+
+@media (max-height: 600px) {
+  .niveles {
+    display: block;
+  }
+  .block {
+    display: none;
+  }
+}
+
+
+#alert {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 5rem;
+  height: 30%;
+  position: relative;
+}
+
+.notas {
+  position: absolute;
+  font-size: clamp(2rem, 4vw, 4rem);
+  animation: flotar 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.nota1 {
+  top: 20%;
+  left: 10%;
+}
+
+.nota2 {
+  bottom: 15%;
+  right: 5%;
+  animation-delay: 2s;
+}
+
+.nota4 {
+  bottom: 15%;
+  right: 90%;
+  animation-delay: 2s;
+}
+
+.nota5 {
+  bottom: 50%;
+  right: 86%;
+  animation-delay: 2s;
+}
+
+.nota6 {
+  bottom: 80%;
+  right: 4%;
+  animation-delay: 2s;
+}
+
+.nota3 {
+  top: 35%;
+  right: 7%;
+  animation-delay: 4s;
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
