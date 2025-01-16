@@ -1,39 +1,3 @@
-/*
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'; // Importación de librerías de enrutamiento
-import { Database, ref, get, set } from '@angular/fire/database'; // Importación de librerías de Firebase para la lectura y escritura de datos
-import { Storage } from '@ionic/storage-angular'; // Importación de librería para el localStorage
-import { NavController } from '@ionic/angular'; // Importación de NavController
-
-@Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
-})
-export class InicioPage implements OnInit {
-  
-  
-
-  constructor(
-    private database: Database,
-    private router: Router,
-    private route: ActivatedRoute,
-    private storage: Storage,
-    private navCtrl: NavController // NavController para navegación sin animaciones
-  ) {}
-
-
-  // Navegación sin animación
-  irPagina(encender: string) {
-    this.navCtrl.navigateForward(['../nivel', { encender }]); // Navega sin animación
-  }
-
-  irPagina2(pagina: string) {
-    this.navCtrl.navigateForward(['../biblioteca']); // Navega sin animación
-  }
-}
-
-*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Database, ref, get, set } from '@angular/fire/database';

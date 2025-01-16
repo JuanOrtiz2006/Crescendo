@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
 
-
-ion-card{
+ion-card {
   width: 70%;
-  margin: 1rem;
-  margin-left: 8rem;
-  margin-right: 7rem;
+  margin: 1rem auto; /* Centrar horizontalmente */
 }
 
 ion-menu::part(backdrop) {
@@ -14,14 +11,12 @@ ion-menu::part(backdrop) {
 
 ion-menu::part(container) {
   border-radius: 0 20px 20px 0;
-
   box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
 }
 
-ion-icon{
+ion-icon {
   margin-right: 1rem;
 }
-
 
 .adorno {
   position: absolute;
