@@ -125,6 +125,7 @@ export class InicioPage implements OnInit {
         </swiper-slide>
       `)
       .join('');
+
     const alert = await this.alertController.create({
       header: titulo,
       cssClass: 'custom-alert',
@@ -141,20 +142,94 @@ export class InicioPage implements OnInit {
     this.navCtrl.navigateRoot('/presentacion');
   }
 
-  // Función para actualizar la variable notas en la base de datos
-  async actualizarNotas() {
-    await set(ref(this.database, 'Notas'), 99);
-  }
-
   // Función para mostrar alerta de conexión
   async mostrarConexionAlerta() {
     const alert = await this.alertController.create({
+      header: 'Verificación',
+      inputs: [
+        {
+          name: 'contraseña',
+          type: 'password',
+          placeholder: 'Contraseña'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Verificar',
+          handler: async (data) => {
+            try {
+              const user = await this.autenticacionService.iniciarSesion(this.correo, data.contraseña);
+              if (user) {
+                this.mostrarAlertaEdicion();
+              }
+            } catch (error) {
+              this.mostrarError('Contraseña incorrecta');
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  // Función para mostrar alerta de edición
+  async mostrarAlertaEdicion() {
+    const alert = await this.alertController.create({
       header: 'Conexión',
-      message: 'Conexión Piano',
+      inputs: [
+        {
+          name: 'red',
+          type: 'text',
+          placeholder: 'Red'
+        },
+        {
+          name: 'contraseña',
+          type: 'password',
+          placeholder: 'Contraseña'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Guardar',
+          handler: async (data) => {
+            if (this.uid) {
+              const redRef = ref(this.database, `Usuarios/${this.uid}/red`);
+              await set(redRef, {
+                nombre: data.red,
+                pin: data.contraseña
+              });
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  // Función para mostrar error
+  async mostrarError(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: mensaje,
       buttons: ['OK']
     });
 
     await alert.present();
+  }
+
+  // Función para actualizar la variable notas en la base de datos
+  async actualizarNotas() {
+    await set(ref(this.database, 'Notas'), 99);
   }
   
 }
