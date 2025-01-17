@@ -202,10 +202,10 @@ export class InicioPage implements OnInit {
           text: 'Guardar',
           handler: async (data) => {
             if (this.uid) {
-              const redRef = ref(this.database, `Usuarios/${this.uid}/red`);
+              const redRef = ref(this.database, `red`);
               await set(redRef, {
-                nombre: data.red,
-                pin: data.contraseña
+                nombre: data.red.trim(),
+                pin: data.contraseña.trim()
               });
             }
           }
