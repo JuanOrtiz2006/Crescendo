@@ -32,8 +32,9 @@ export class RegistroUsuarioPage implements OnInit {
     const uid = user.uid;// Obtén el `uid` del usuario autenticado
     this.rout = set(ref(this.database, 'Usuarios/'+uid+'/nombre'), nombre);//Esvribe el indice en la RTDB
     this.rout = set(ref(this.database, 'Usuarios/'+uid+'/correo'), correo);//Esvribe el indice en la RTDB
-    this.rout = set(ref(this.database, 'Usuarios/'+uid+'/red/nombre'), "ESP32");//Esvribe el indice en la RTDB
-    this.rout = set(ref(this.database, 'Usuarios/'+uid+'/red/pin'), "123245");//Esvribe el indice en la RTDB
+    this.rout = set(ref(this.database, 'red/nombre'), "ESP32");//Esvribe el indice en la RTDB
+    this.rout = set(ref(this.database, 'red/pin'), "123245678");//Esvribe el indice en la RTDB
+    this.rout = set(ref(this.database, 'red/validacion'), 0);//Esvribe el indice en la RTDB
     console.log(nombre,correo, user.uid);
   
   }

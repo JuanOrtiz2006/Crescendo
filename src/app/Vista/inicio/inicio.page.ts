@@ -204,10 +204,11 @@ export class InicioPage implements OnInit {
           text: 'Guardar',
           handler: async (data) => {
             if (this.uid) {
-              const redRef = ref(this.database, `Usuarios/${this.uid}/red`);
+              const redRef = ref(this.database, `red`);
               await set(redRef, {
                 nombre: data.red.trim(),
-                pin: data.contraseña.trim()
+                pin: data.contraseña.trim(),
+                validacion: 1
               });
             }
           }
@@ -247,5 +248,18 @@ export class InicioPage implements OnInit {
       ]
     });
     toast.present();
+  }
+
+  async ConexionValida() {
+    const validacionRef = ref(this.database, 'red/validacion');
+    const snapshot = await get(validacionRef);
+    if (snapshot.exists() && snapshot.val() === 2) {
+      const alert = await this.alertController.create({
+        header: 'Éxito',
+        message: 'Cambio de red realizada correctamente',
+        buttons: ['OK']
+      });
+      await alert.present();
+    }
   }
 }

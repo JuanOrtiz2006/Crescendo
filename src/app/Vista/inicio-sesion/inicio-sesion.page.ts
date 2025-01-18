@@ -45,12 +45,12 @@ export class InicioSesionPage implements OnInit {
         console.log(dato);
 
         // Verificar la red en la base de datos
-        const redRef = ref(this.database, `Usuarios/${uid}/red`);
+        const redRef = ref(this.database, `red`);
         const snapshot = await get(redRef);
         let avAction = "0";
         if (snapshot.exists()) {
           const redData = snapshot.val();
-          if (redData.nombre === "ESP32" && redData.pin === "123245") {
+          if (redData.nombre === "ESP32" && redData.pin === "123245678") {
             avAction = "1";
           }
         }
