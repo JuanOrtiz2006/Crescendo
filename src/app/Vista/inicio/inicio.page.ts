@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Importar ActivatedRoute
 import { Database, ref, get, set } from '@angular/fire/database';
 import { Storage } from '@ionic/storage-angular';
-import { AlertController, ToastController } from '@ionic/angular'; // Importar ToastController
+import { AlertController, ToastController, MenuController } from '@ionic/angular'; // Importar MenuController
 import { NavController } from '@ionic/angular'; // Importación de NavController
 import { AutenticacionService } from 'src/app/Servicio/autenticacion.service'; // Importación del servicio de autenticación
 
@@ -49,7 +49,8 @@ export class InicioPage implements OnInit {
     private alertController: AlertController,
     private toastController: ToastController, // Añadir ToastController
     private navCtrl: NavController, // NavController para navegación sin animaciones
-    private autenticacionService: AutenticacionService // Servicio de autenticación
+    private autenticacionService: AutenticacionService, // Servicio de autenticación
+    private menu: MenuController // Añadir MenuController
   ) {}
 
   async ngOnInit() {

@@ -3,8 +3,8 @@ import { AlertController } from '@ionic/angular'; // Importacion de librerias pa
 import { AutenticacionService } from 'src/app/Servicio/autenticacion.service'; // Importacion del servicio
 import { Router } from '@angular/router'; // Importacion de la libreria de enrutamiento
 import { NgForm } from '@angular/forms'; // Importacion de la librerias de ngForm
-import { Database, object, ref, set } from '@angular/fire/database'; // Importacion de librerias de Firebase
-import { Storage } from '@ionic/storage-angular'; // Importacion de las librerias del localStorsge
+import { Database, ref, get } from '@angular/fire/database'; // Importacion de librerias de Firebase
+import { Storage } from '@ionic/storage-angular'; // Importacion de las librerias del localStorage
 import { NavController } from '@ionic/angular'; // Importación de NavController
 
 @Component({
@@ -38,13 +38,24 @@ export class InicioSesionPage implements OnInit {
         formulario.value.clave
       ); // Identifica el usuario en la RTDB
       if (userCredential) {
-        const avAction="1";
         // Verifica si la autenticación fue exitosa
         const user = userCredential.user; // Accede a la propiedad `user` del objeto `UserCredential`
         const uid = user.uid; // Obtén el `uid` del usuario autenticado
         const dato = this.storage.set('id', uid); // Guarda el uid en el local storage
         console.log(dato);
-        this.navCtrl.navigateForward(['../inicio',{avAction}]); // Navega hacia la página inicio y envía el dato con valor de 1
+
+        // Verificar la red en la base de datos
+        const redRef = ref(this.database, `Usuarios/${uid}/red`);
+        const snapshot = await get(redRef);
+        let avAction = "0";
+        if (snapshot.exists()) {
+          const redData = snapshot.val();
+          if (redData.nombre === "ESP32" && redData.pin === "123245") {
+            avAction = "1";
+          }
+        }
+
+        this.navCtrl.navigateForward(['../inicio', { avAction }]); // Navega hacia la página inicio y envía el dato con valor de avAction
       }
     } catch (error) {
       this.manejarError(error, 'inicio');

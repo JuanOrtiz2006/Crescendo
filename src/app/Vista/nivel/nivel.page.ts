@@ -48,6 +48,7 @@ export class NivelPage implements OnInit {
   async irPagina() {
     await this.actualizarNotas(); // Asegurarse de que la función se ejecute antes de la navegación
     this.router.navigate(['../inicio']);
+    this.navCtrl.navigateForward(['../inicio',{avAction:"0"}]);
   }
 
   // Método para lectura de slider
