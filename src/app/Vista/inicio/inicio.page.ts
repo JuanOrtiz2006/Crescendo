@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Importar ActivatedRoute
 import { Database, ref, get, set } from '@angular/fire/database';
 import { Storage } from '@ionic/storage-angular';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular'; // Importar ToastController
 import { NavController } from '@ionic/angular'; // Importación de NavController
 import { AutenticacionService } from 'src/app/Servicio/autenticacion.service'; // Importación del servicio de autenticación
 
@@ -12,6 +12,7 @@ import { AutenticacionService } from 'src/app/Servicio/autenticacion.service'; /
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  pagina:any;
   uid: string | null = null;
   nombre: string = '';
   message: string = '';
@@ -43,21 +44,21 @@ export class InicioPage implements OnInit {
   constructor(
     private database: Database,
     private router: Router,
+    private route: ActivatedRoute, // Añadir ActivatedRoute
     private storage: Storage,
     private alertController: AlertController,
+    private toastController: ToastController, // Añadir ToastController
     private navCtrl: NavController, // NavController para navegación sin animaciones
     private autenticacionService: AutenticacionService // Servicio de autenticación
-  ) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        if (event.url === '/inicio') {
-          this.actualizarNotas();
-        }
-      }
-    });
-  }
+  ) {}
 
   async ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.pagina = params['avAction'];
+      if (this.pagina === "1"){
+        this.ConexionAlert()
+      }
+    });
     this.uid = await this.storage.get('id');
     await this.obtenerDatosUsuario(this.uid);
   }
@@ -202,7 +203,7 @@ export class InicioPage implements OnInit {
           text: 'Guardar',
           handler: async (data) => {
             if (this.uid) {
-              const redRef = ref(this.database, `red`);
+              const redRef = ref(this.database, `Usuarios/${this.uid}/red`);
               await set(redRef, {
                 nombre: data.red.trim(),
                 pin: data.contraseña.trim()
@@ -231,5 +232,19 @@ export class InicioPage implements OnInit {
   async actualizarNotas() {
     await set(ref(this.database, 'Notas'), 99);
   }
-  
+
+  // Función para mostrar el toast
+  async ConexionAlert() {
+    const toast = await this.toastController.create({
+      message: 'Para conectar a tu piano Crescendo, es necesario una conexión provisional de seguridad de nombre ESP32 y contraseña 123245. Para conectarte a otra red puede ir a las opciones en la parte superior.',
+      position: 'bottom',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'cancel'
+        }
+      ]
+    });
+    toast.present();
+  }
 }

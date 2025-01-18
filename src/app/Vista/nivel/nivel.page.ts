@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Database, ref, set } from '@angular/fire/database';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-nivel',
   templateUrl: './nivel.page.html',
@@ -27,21 +27,20 @@ export class NivelPage implements OnInit {
     { nivel: 2, indice: 27 }
   ];
 
-  constructor(private database: Database, private router: Router, private route: ActivatedRoute) {
-    // Suscribirse a los eventos de navegación para actualizar la variable 'notas' en la base de datos
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd && event.url === '/inicio') {
-        this.isReturningToInicio = true;
-        this.actualizarNotas();
-      }
-    });
-  }
+  constructor(private database: Database, private router: Router, private route: ActivatedRoute, private navCtrl: NavController) { }
 
   ngOnInit() {
     // Suscribirse a los parámetros de la ruta para obtener 'encender'
     this.route.params.subscribe(params => {
       this.pagina = params['encender'];
       this.initializeLinks();
+    });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isReturningToInicio = true;
+        this.actualizarNotas();
+      }
     });
   }
 
